@@ -1,0 +1,15 @@
+# Ejecutar desde la raiz del proyecto. Recalcula y compara CSV con tolerancia numerica.
+if(!file.exists("Grupo25.Rproj")) stop("Abrir Grupo25.Rproj y ejecutar desde la raiz.")
+source("script/00_ejecutar_todo.R")
+referencias <- list.files("auxiliar/referencias_resultados",pattern="[.]csv$",full.names=TRUE)
+if(!length(referencias)) stop("No se encuentran las referencias de comparacion.")
+comparacion <- do.call(rbind,lapply(referencias,function(archivo) {
+  esperado <- read.csv(archivo,stringsAsFactors=FALSE,check.names=FALSE)
+  generado <- read.csv(file.path("output/tablas",basename(archivo)),stringsAsFactors=FALSE,check.names=FALSE)
+  ok <- isTRUE(all.equal(esperado,generado,tolerance=1e-7,check.attributes=FALSE))
+  data.frame(archivo=basename(archivo),coincide=ok)
+}))
+write.csv(comparacion,"output/verificacion_reproduccion.csv",row.names=FALSE)
+print(comparacion,row.names=FALSE)
+if(!all(comparacion$coincide)) stop("Hay resultados diferentes: revisar output/verificacion_reproduccion.csv")
+cat("\nReproduccion de tablas completada. No equivale a una auditoria estadistica externa.\n")
