@@ -1,0 +1,10 @@
+"etapa","variable","n","media","desvio","p25","mediana","p75"
+"Ingreso valido antes de filtro de horas","p21",11260,1118724.95778372,961036.092512198,6e+05,920000,1400000
+"Ingreso valido antes de filtro de horas","pp3e_tot",11254,33.5107034280993,18.220617122754,21,40,45
+"Ingreso valido antes de filtro de horas","ch06",11260,39.2860324965015,11.6398156185606,30,39,48
+"Muestra amplia en pesos","p21",10156,1107876.29194744,927754.667355866,590000,9e+05,1400000
+"Muestra amplia en pesos","pp3e_tot",10156,37.2026990424653,15.2057661984109,27,40,48
+"Muestra amplia en pesos","ch06",10156,38.959304063999,11.602281637002,30,38,47
+"Principal: ingreso positivo","p21",9968,1129195.58790267,923698.222731136,6e+05,950000,1400000
+"Principal: ingreso positivo","pp3e_tot",9968,37.2967102848896,15.1205834714188,28,40,48
+"Principal: ingreso positivo","ch06",9968,39.0773142484319,11.5544815217549,30,39,48
