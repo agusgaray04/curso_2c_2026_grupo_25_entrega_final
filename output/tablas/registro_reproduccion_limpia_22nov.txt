@@ -1,0 +1,172 @@
+During startup - Warning messages:
+1: Setting LC_COLLATE=C.UTF-8 failed 
+2: Setting LC_CTYPE=C.UTF-8 failed 
+3: Setting LC_MONETARY=C.UTF-8 failed 
+4: Setting LC_TIME=C.UTF-8 failed 
+
+Ejecutando  script/01_preparar_datos.R 
+During startup - Warning messages:
+1: Setting LC_COLLATE=C.UTF-8 failed 
+2: Setting LC_CTYPE=C.UTF-8 failed 
+3: Setting LC_MONETARY=C.UTF-8 failed 
+4: Setting LC_TIME=C.UTF-8 failed 
+Preparacion:  1047  personas;  973  hogares.
+
+Ejecutando  script/02_descriptivas_y_faltantes.R 
+During startup - Warning messages:
+1: Setting LC_COLLATE=C.UTF-8 failed 
+2: Setting LC_CTYPE=C.UTF-8 failed 
+3: Setting LC_MONETARY=C.UTF-8 failed 
+4: Setting LC_TIME=C.UTF-8 failed 
+
+Ejecutando  script/03_estandarizacion.R 
+During startup - Warning messages:
+1: Setting LC_COLLATE=C.UTF-8 failed 
+2: Setting LC_CTYPE=C.UTF-8 failed 
+3: Setting LC_MONETARY=C.UTF-8 failed 
+4: Setting LC_TIME=C.UTF-8 failed 
+
+Ejecutando  script/04_regresiones.R 
+During startup - Warning messages:
+1: Setting LC_COLLATE=C.UTF-8 failed 
+2: Setting LC_CTYPE=C.UTF-8 failed 
+3: Setting LC_MONETARY=C.UTF-8 failed 
+4: Setting LC_TIME=C.UTF-8 failed 
+
+Ejecutando  script/05_outliers_y_sensibilidades.R 
+During startup - Warning messages:
+1: Setting LC_COLLATE=C.UTF-8 failed 
+2: Setting LC_CTYPE=C.UTF-8 failed 
+3: Setting LC_MONETARY=C.UTF-8 failed 
+4: Setting LC_TIME=C.UTF-8 failed 
+
+Ejecutando  script/06_varianza_y_theil.R 
+During startup - Warning messages:
+1: Setting LC_COLLATE=C.UTF-8 failed 
+2: Setting LC_CTYPE=C.UTF-8 failed 
+3: Setting LC_MONETARY=C.UTF-8 failed 
+4: Setting LC_TIME=C.UTF-8 failed 
+
+Ejecutando  script/07_graficos_instancia3.R 
+During startup - Warning messages:
+1: Setting LC_COLLATE=C.UTF-8 failed 
+2: Setting LC_CTYPE=C.UTF-8 failed 
+3: Setting LC_MONETARY=C.UTF-8 failed 
+4: Setting LC_TIME=C.UTF-8 failed 
+
+Ejecutando  script/08_graficos_resultados.R 
+During startup - Warning messages:
+1: Setting LC_COLLATE=C.UTF-8 failed 
+2: Setting LC_CTYPE=C.UTF-8 failed 
+3: Setting LC_MONETARY=C.UTF-8 failed 
+4: Setting LC_TIME=C.UTF-8 failed 
+Warning messages:
+1: In prettyNum(.Internal(format(x, trim, digits, nsmall, width, 3L,  :
+  'big.mark' and 'decimal.mark' are both '.', which could be confusing
+2: In prettyNum(.Internal(format(x, trim, digits, nsmall, width, 3L,  :
+  'big.mark' and 'decimal.mark' are both '.', which could be confusing
+
+Ejecutando  script/09_ampliar_soporte.R 
+During startup - Warning messages:
+1: Setting LC_COLLATE=C.UTF-8 failed 
+2: Setting LC_CTYPE=C.UTF-8 failed 
+3: Setting LC_MONETARY=C.UTF-8 failed 
+4: Setting LC_TIME=C.UTF-8 failed 
+        modelo    n hogares puestos  coef_log error_estandar        t   gl
+     principal 9968    7351    1926 0.2518981     0.03941572 6.390803 7350
+ region_sector 9968    7351    1926 0.2483511     0.03920952 6.333948 7350
+            p ic_log_inferior ic_log_superior diferencia_porcentual
+ 1.750935e-10       0.1746320       0.3291642              28.64649
+ 2.530436e-10       0.1714892       0.3252130              28.19099
+ ic_pct_inferior ic_pct_superior r2_ponderado
+        19.08079        38.98061    0.7017040
+        18.70713        38.43255    0.7142538
+ escala    n asimetria_residuos cor_abs_residuo_ajuste
+  pesos 9968          3.2752218              0.2938863
+    log 9968         -0.6000052             -0.1471874
+                     componente varianza_millones2 porcentaje_varianza
+                  Entre puestos         0.20972241           39.975988
+ Entre titulo dentro del puesto         0.03119628            5.946442
+      Dentro de puesto y titulo         0.28370226           54.077570
+      theil porcentaje_theil    n puestos
+ 0.11045180        44.606271 6858     157
+ 0.01099005         4.438362 6858     157
+ 0.12617311        50.955368 6858     157
+                                              universo
+ Muestra amplia: puestos con al menos 10 casos totales
+ Muestra amplia: puestos con al menos 10 casos totales
+ Muestra amplia: puestos con al menos 10 casos totales
+
+Ejecutando  script/10_diagnosticos_modelo_principal.R 
+During startup - Warning messages:
+1: Setting LC_COLLATE=C.UTF-8 failed 
+2: Setting LC_CTYPE=C.UTF-8 failed 
+3: Setting LC_MONETARY=C.UTF-8 failed 
+4: Setting LC_TIME=C.UTF-8 failed 
+Modelo principal y diagnosticos finales guardados.
+             modelo    n  coef_log error_estandar ic_log_inferior
+        Solo título 9968 0.6724857     0.03899994       0.5960346
+    Titulo y puesto 9968 0.3054305     0.04427526       0.2186383
+ Puesto y controles 9968 0.2518981     0.03941572       0.1746320
+ ic_log_superior diferencia_porcentual ic_pct_inferior ic_pct_superior
+       0.7489368              95.91010        81.49077       111.47504
+       0.3922227              35.72091        24.43811        48.02673
+       0.3291642              28.64649        19.08079        38.98061
+ brecha_cruda_aritmetica_pct
+                    89.29123
+                    89.29123
+                    89.29123
+    n h_igual_uno personas_unicas_en_puesto mismos_casos h_uno_no_unicos
+ 9968        1166                      1166         TRUE               0
+
+Entrega final: etapas completadas sin depender de objetos previos.
+                                  archivo coincide
+                             01_flujo.csv     TRUE
+                           02_puestos.csv     TRUE
+                         03_faltantes.csv     TRUE
+            04_no_respuesta_educacion.csv     TRUE
+               05_no_respuesta_region.csv     TRUE
+               06_horas_denominadores.csv     TRUE
+                     07_antes_despues.csv     TRUE
+           08_descriptivas_por_titulo.csv     TRUE
+                09_categoricas_modelo.csv     TRUE
+            10_continuidad_instancia1.csv     TRUE
+                    11_soporte_y_kish.csv     TRUE
+                   12_estandarizacion.csv     TRUE
+                           13_modelos.csv     TRUE
+                  14_wald_interaccion.csv     TRUE
+      15_brechas_ajustadas_por_puesto.csv     TRUE
+               16_contraste_terciario.csv     TRUE
+                      17_diagnosticos.csv     TRUE
+                          18_outliers.csv     TRUE
+                   19_perfil_extremos.csv     TRUE
+                    20_superiores_p99.csv     TRUE
+                        21_modelo_log.csv     TRUE
+                    22_sensibilidades.csv     TRUE
+ 23_descriptivas_tratamiento_extremos.csv     TRUE
+                         24_supuestos.csv     TRUE
+                  25_varianza_y_theil.csv     TRUE
+                       26_diccionario.csv     TRUE
+                  27_soporte_ampliado.csv     TRUE
+           28_sensibilidad_horas_cero.csv     TRUE
+       29_modelo_principal_log_amplio.csv     TRUE
+                  30_flujo_log_amplio.csv     TRUE
+          31_soporte_modelo_principal.csv     TRUE
+        32_diagnosticos_modelo_amplio.csv     TRUE
+   33_descomposicion_soporte_ampliado.csv     TRUE
+ 34_descriptivas_antes_despues_amplia.csv     TRUE
+ 35_descriptivas_principal_por_titulo.csv     TRUE
+             36_categoricas_principal.csv     TRUE
+         37_outliers_modelo_principal.csv     TRUE
+         38_perfil_extremos_principal.csv     TRUE
+          39_validacion_modelo_amplio.csv     TRUE
+         40_caso_influyente_principal.csv     TRUE
+      41_sensibilidades_principal_log.csv     TRUE
+        42_descriptivas_p99_principal.csv     TRUE
+   43_composicion_por_grupo_principal.csv     TRUE
+            44_verificacion_iqr_y_p99.csv     TRUE
+        45_brecha_cruda_y_modelos_log.csv     TRUE
+   46_verificacion_h_uno_y_singletons.csv     TRUE
+             47_variables_y_faltantes.csv     TRUE
+
+Reproduccion de tablas completada. No equivale a una auditoria estadistica externa.
