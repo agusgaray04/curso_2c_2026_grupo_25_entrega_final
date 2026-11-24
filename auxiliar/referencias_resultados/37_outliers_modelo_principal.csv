@@ -1,0 +1,6 @@
+"criterio","n","umbral"
+"Cola baja log-IQR",393,168339.515324908
+"Cola alta log-IQR",58,4989915.7567297
+"Superior al P99 ponderado",58,4800000
+"Cook mayor a 4/n, entre h menor a 1",456,0.000401284109149278
+"Borrado de rango fijo no identificable: h=1",1166,1
