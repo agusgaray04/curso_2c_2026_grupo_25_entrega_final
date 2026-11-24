@@ -1,0 +1,1655 @@
+[
+  {
+    "title": "Título universitario e ingresos",
+    "kind": "cover",
+    "subtitle": "Entrega final integradora · Grupo 25\nEPH, primer trimestre de 2026",
+    "authors": "Agustín Garay · 911361\nBautista Lezcano · 917033\nRamiro Leverone · 909328",
+    "takeaway": "De las diferencias educativas generales a una comparación dentro de ocupación y rama",
+    "scripts": [
+      "01_preparar_datos.R"
+    ],
+    "files": [
+      "01_flujo.csv"
+    ],
+    "number": 1,
+    "source": "Fuente: elaboración propia con EPH-INDEC, 1T 2026. PONDIIO salvo indicación.",
+    "notes": "Guion y detalle técnico: \nDe las diferencias educativas generales a una comparación dentro de ocupación y rama\n\nScripts: 01_preparar_datos.R\nResultados: 01_flujo.csv",
+    "original_number": 1
+  },
+  {
+    "title": "¿El título se asocia con un ingreso mayor?",
+    "kind": "text",
+    "lead": "Hipótesis: el ingreso se asocia positivamente al título universitario aun al comparar ocupación y rama, con magnitudes que pueden variar.",
+    "blocks": [
+      [
+        "De dónde venimos",
+        "Instancia 1: educación, desocupación, registro, ingresos y cuentapropismo. Superior completo todavía agrupaba terciario y universitario."
+      ],
+      [
+        "Qué contrastamos",
+        "H0: no hay diferencia ajustada asociada al título. H1: sí la hay. La heterogeneidad se contrasta solo en el detalle de cinco puestos; no en todo el soporte amplio."
+      ]
+    ],
+    "takeaway": "La pregunta cambió de describir niveles educativos a comparar ingresos dentro de categorías laborales.",
+    "scripts": [
+      "01_preparar_datos.R",
+      "02_descriptivas_y_faltantes.R"
+    ],
+    "files": [
+      "10_continuidad_instancia1.csv"
+    ],
+    "source": "Fuente: Entrega 1 del grupo y EPH-INDEC 1T 2026.",
+    "number": 2,
+    "notes": "Guion y detalle técnico: Hipótesis: el ingreso se asocia positivamente al título universitario aun al comparar ocupación y rama, con magnitudes que pueden variar.\nLa pregunta cambió de describir niveles educativos a comparar ingresos dentro de categorías laborales.\n\nScripts: 01_preparar_datos.R, 02_descriptivas_y_faltantes.R\nResultados: 10_continuidad_instancia1.csv",
+    "original_number": 2
+  },
+  {
+    "title": "Las devoluciones mejoraron la comparación",
+    "kind": "table",
+    "table": {
+      "headers": [
+        "Devolución y origen",
+        "Cambio incorporado"
+      ],
+      "rows": [
+        [
+          "Instancia 1: período, variables y descriptivos",
+          "EPH 1T 2026, pesos documentados y tablas antes/después."
+        ],
+        [
+          "Instancia 1: ocupación, sector y coherencia",
+          "Puesto CNO × rama; sector en sensibilidad. AUH y monotributo retirados."
+        ],
+        [
+          "Instancia 2: log o ingreso horario; muestra amplia",
+          "Principal: log mensual con horas, n=9.968. Referencia en pesos: n=10.156."
+        ],
+        [
+          "Instancia 2: varianza depende del soporte",
+          "Comparación de cinco y 170 puestos; se distinguen muestras."
+        ],
+        [
+          "Instancia 3: comunicativo accesible y textos amplios",
+          "Etiquetas directas; sin n, IC, ajuste ni ponderador en la pieza. Bajada y lectura simples."
+        ]
+      ],
+      "widths": [
+        330,
+        830
+      ]
+    },
+    "takeaway": "Los cinco puestos y sus gráficos se conservan como detalle, no como única evidencia.",
+    "scripts": [
+      "09_ampliar_soporte.R",
+      "10_diagnosticos_modelo_principal.R"
+    ],
+    "files": [
+      "29_modelo_principal_log_amplio.csv",
+      "33_descomposicion_soporte_ampliado.csv"
+    ],
+    "source": "Fuente: devoluciones docentes de las instancias 1, 2 y 3.",
+    "number": 3,
+    "notes": "Guion y detalle técnico: \nLos cinco puestos y sus gráficos se conservan como detalle, no como única evidencia.\nLas tres devoluciones originales se incluyen en auxiliar/; las correcciones orientan el análisis y la comunicación.\nScripts: 09_ampliar_soporte.R, 10_diagnosticos_modelo_principal.R\nResultados: 29_modelo_principal_log_amplio.csv, 33_descomposicion_soporte_ampliado.csv",
+    "note": "Las tres devoluciones originales se incluyen en auxiliar/; las correcciones orientan el análisis y la comunicación.",
+    "original_number": 3
+  },
+  {
+    "title": "Una encuesta de personas, con pesos distintos",
+    "kind": "table",
+    "table": {
+      "headers": [
+        "Variable / función",
+        "Tipo y unidad",
+        "NA / no utilizable"
+      ],
+      "rows": [
+        [
+          "P21: ingreso principal",
+          "Continuo, pesos/mes",
+          "0 / 2.322 (−9)"
+        ],
+        [
+          "Título: CH12 + CH13 + CH10",
+          "Categoría construida",
+          "5 no clasificables"
+        ],
+        [
+          "Puesto: CNO × rama",
+          "Categoría laboral",
+          "16 CNO / 66 rama"
+        ],
+        [
+          "PP3E_TOT: horas",
+          "Discreto, horas/semana",
+          "0 / 20; 1.283 ceros aparte"
+        ],
+        [
+          "CH06 / CH04",
+          "Edad (años) / sexo",
+          "0 / 0"
+        ],
+        [
+          "PONDIIO / PONDERA",
+          "Pesos de ingreso / personas",
+          "2.322 ≤0 / 0"
+        ],
+        [
+          "Clave persona y hogar",
+          "Identificadores para CR1",
+          "0; no se difunden perfiles individuales"
+        ]
+      ],
+      "widths": [
+        390,
+        370,
+        400
+      ]
+    },
+    "takeaway": "Título=1: CH12=7 y CH13=1, o CH12=8 (posgrado, grado previo supuesto).\nTítulo=0: terciario, universidad incompleta y niveles previos. Sin información suficiente: NA.",
+    "scripts": [
+      "01_preparar_datos.R",
+      "08_graficos_resultados.R"
+    ],
+    "files": [
+      "47_variables_y_faltantes.csv"
+    ],
+    "source": "Fuente: EPH-INDEC 1T 2026; diccionario generado por R.",
+    "number": 4,
+    "notes": "Guion y detalle técnico: EPH-INDEC, 1T 2026: 43.739 personas, 234 variables y cobertura de 31 aglomerados urbanos. Faltantes sobre 13.632 asalariados.\nTítulo=1: CH12=7 y CH13=1, o CH12=8 (posgrado, grado previo supuesto).\nTítulo=0: terciario, universidad incompleta y niveles previos. Sin información suficiente: NA.\nAuxiliar: etiquetas de cinco puestos, sin otra base empírica ni cruces externos. Ingresos declarados: riesgo de no respuesta y subdeclaración. Diccionario: A, K y L.\nScripts: 01_preparar_datos.R, 08_graficos_resultados.R\nResultados: 47_variables_y_faltantes.csv",
+    "lead": "EPH-INDEC, 1T 2026: 43.739 personas, 234 variables y cobertura de 31 aglomerados urbanos. Faltantes sobre 13.632 asalariados.",
+    "note": "Auxiliar: etiquetas de cinco puestos, sin otra base empírica ni cruces externos. Ingresos declarados: riesgo de no respuesta y subdeclaración. Diccionario: A, K y L.",
+    "original_number": 4
+  },
+  {
+    "title": "Dos muestras responden preguntas diferentes",
+    "kind": "table",
+    "table": {
+      "headers": [
+        "Filtro o destino",
+        "n observado",
+        "Uso"
+      ],
+      "rows": [
+        [
+          "18–65 años / ocupados / asalariados",
+          "27.789 / 18.800 / 13.632",
+          "Delimitar población."
+        ],
+        [
+          "Título, ingreso y ocupación válidos",
+          "11.302",
+          "Antes de exigir rama válida."
+        ],
+        [
+          "También rama válida",
+          "11.260",
+          "Universo para construir puestos."
+        ],
+        [
+          "Horas y controles válidos, muestra amplia",
+          "10.156",
+          "Referencia en pesos."
+        ],
+        [
+          "Ingreso positivo, muestra principal",
+          "9.968",
+          "188 ceros salen solo para log."
+        ],
+        [
+          "Cinco puestos: antes / después de horas",
+          "1.447 / 1.047",
+          "Estandarización / regresión en cinco puestos."
+        ]
+      ],
+      "widths": [
+        610,
+        220,
+        330
+      ]
+    },
+    "takeaway": "Principal: 7.351 hogares y 1.926 puestos; 223 puestos con ambos grupos, 5.540 personas.",
+    "scripts": [
+      "01_preparar_datos.R",
+      "09_ampliar_soporte.R"
+    ],
+    "files": [
+      "01_flujo.csv",
+      "30_flujo_log_amplio.csv",
+      "31_soporte_modelo_principal.csv"
+    ],
+    "number": 5,
+    "source": "Fuente: elaboración propia con EPH-INDEC, 1T 2026. PONDIIO salvo indicación.",
+    "notes": "Guion y detalle técnico: \nPrincipal: 7.351 hogares y 1.926 puestos; 223 puestos con ambos grupos, 5.540 personas.\n\nScripts: 01_preparar_datos.R, 09_ampliar_soporte.R\nResultados: 01_flujo.csv, 30_flujo_log_amplio.csv, 31_soporte_modelo_principal.csv",
+    "original_number": 5
+  },
+  {
+    "title": "No responder ingreso no es declarar cero horas",
+    "kind": "split",
+    "table": {
+      "headers": [
+        "Situación",
+        "Conteo / decisión"
+      ],
+      "rows": [
+        [
+          "Ingreso no utilizable",
+          "2.322; sin imputar"
+        ],
+        [
+          "Título / CNO / rama",
+          "5 / 16 / 66 inválidos"
+        ],
+        [
+          "Horas no utilizables",
+          "20; excluir del modelo"
+        ],
+        [
+          "Horas cero",
+          "1.283; analizar aparte"
+        ],
+        [
+          "En cinco puestos",
+          "399 ceros + 1 inválido"
+        ]
+      ],
+      "widths": [
+        1,
+        1.15
+      ]
+    },
+    "takeaway": "No respuesta: 17 % observado y 22,1 % ponderado. PONDIIO no elimina todo sesgo de selección.",
+    "note": "Conteos: casos observados; porcentajes: con PONDERA. Los 5 no clasificables se omiten de las barras, no de los conteos.",
+    "scripts": [
+      "02_descriptivas_y_faltantes.R",
+      "05_outliers_y_sensibilidades.R"
+    ],
+    "files": [
+      "03_faltantes.csv",
+      "04_no_respuesta_educacion.csv",
+      "06_horas_denominadores.csv"
+    ],
+    "number": 6,
+    "source": "Fuente: elaboración propia con EPH-INDEC, 1T 2026. PONDIIO salvo indicación.",
+    "notes": "Guion y detalle técnico: \nNo respuesta: 17 % observado y 22,1 % ponderado. PONDIIO no elimina todo sesgo de selección.\nConteos: casos observados; porcentajes: con PONDERA. Los 5 no clasificables se omiten de las barras, no de los conteos.\nScripts: 02_descriptivas_y_faltantes.R, 05_outliers_y_sensibilidades.R\nResultados: 03_faltantes.csv, 04_no_respuesta_educacion.csv, 06_horas_denominadores.csv",
+    "image": "faltantes_cuerpo.png",
+    "original_number": 6
+  },
+  {
+    "title": "Los universitarios ganan más en la comparación simple",
+    "kind": "split",
+    "table": {
+      "headers": [
+        "Principal, n=9.968",
+        "Sin título univ.",
+        "Con título univ."
+      ],
+      "rows": [
+        [
+          "n observado",
+          "8.726",
+          "1.242"
+        ],
+        [
+          "Media, millones $",
+          "0,997",
+          "1,888"
+        ],
+        [
+          "Desvío, millones $",
+          "0,738",
+          "1,397"
+        ],
+        [
+          "Mediana, millones $",
+          "0,890",
+          "1,500"
+        ],
+        [
+          "Horas / edad, medias",
+          "37,5 / 38,6",
+          "36,2 / 41,6"
+        ],
+        [
+          "Mujeres",
+          "42,8 %",
+          "52,1 %"
+        ],
+        [
+          "Sector estatal",
+          "17,1 %",
+          "39,7 %"
+        ]
+      ],
+      "widths": [
+        1.5,
+        1,
+        1
+      ]
+    },
+    "takeaway": "Brecha de medias aritméticas: +89,3 %. No es el mismo estimando que el +28,6 % condicional en log.",
+    "note": "PONDIIO. Terciario completo: 11,4 % del grupo sin título universitario. Los cambios de composición antes/después se muestran en la diapositiva 8.",
+    "scripts": [
+      "10_diagnosticos_modelo_principal.R"
+    ],
+    "files": [
+      "35_descriptivas_principal_por_titulo.csv",
+      "36_categoricas_principal.csv",
+      "43_composicion_por_grupo_principal.csv",
+      "45_brecha_cruda_y_modelos_log.csv"
+    ],
+    "number": 7,
+    "source": "Fuente: elaboración propia con EPH-INDEC, 1T 2026. PONDIIO salvo indicación.",
+    "notes": "Guion y detalle técnico: \nBrecha de medias aritméticas: +89,3 %. No es el mismo estimando que el +28,6 % condicional en log.\nPONDIIO. Terciario completo: 11,4 % del grupo sin título universitario. Los cambios de composición antes/después se muestran en la diapositiva 8.\nScripts: 10_diagnosticos_modelo_principal.R\nResultados: 35_descriptivas_principal_por_titulo.csv, 36_categoricas_principal.csv, 43_composicion_por_grupo_principal.csv, 45_brecha_cruda_y_modelos_log.csv",
+    "image": "densidad_cuerpo.png",
+    "original_number": 7
+  },
+  {
+    "title": "Los extremos se revisan; no se borran por ser altos",
+    "kind": "outliers_chart",
+    "table": {
+      "headers": [
+        "Criterio",
+        "Hallazgo / decisión"
+      ],
+      "rows": [
+        [
+          "1,5 × IQR de log(P21)",
+          "393 bajos; 58 altos. Se conservan: no comprobamos errores."
+        ],
+        [
+          "P99 ponderado: $4,8 M",
+          "58 acotados solo en sensibilidad; mismas personas."
+        ],
+        [
+          "Influencia",
+          "Cook y borrado; h=1: 1.166 puestos unipersonales."
+        ]
+      ],
+      "widths": [
+        1,
+        1.55
+      ]
+    },
+    "takeaway": "El log evalúa extremos relativos ante la cola derecha. Plausibilidad e influencia no certifican errores.",
+    "note": "Media y mediana con PONDIIO. El antes/después cambia la composición; no es una población idéntica. P99 conserva n=9.968; detalle completo en anexo B.",
+    "scripts": [
+      "10_diagnosticos_modelo_principal.R"
+    ],
+    "files": [
+      "37_outliers_modelo_principal.csv",
+      "38_perfil_extremos_principal.csv",
+      "40_caso_influyente_principal.csv",
+      "42_descriptivas_p99_principal.csv",
+      "44_verificacion_iqr_y_p99.csv",
+      "46_verificacion_h_uno_y_singletons.csv"
+    ],
+    "number": 8,
+    "source": "Fuente: elaboración propia con EPH-INDEC, 1T 2026. PONDIIO salvo indicación.",
+    "notes": "Guion y detalle técnico: \nEl log evalúa extremos relativos ante la cola derecha. Plausibilidad e influencia no certifican errores.\nMedia y mediana con PONDIIO. El antes/después cambia la composición; no es una población idéntica. P99 conserva n=9.968; detalle completo en anexo B.\nScripts: 10_diagnosticos_modelo_principal.R\nResultados: 37_outliers_modelo_principal.csv, 38_perfil_extremos_principal.csv, 40_caso_influyente_principal.csv, 42_descriptivas_p99_principal.csv, 44_verificacion_iqr_y_p99.csv, 46_verificacion_h_uno_y_singletons.csv",
+    "image": "outliers_log_iqr.png",
+    "original_number": 8
+  },
+  {
+    "title": "Ajustar permite comparar personas más parecidas",
+    "kind": "text",
+    "lead": "ln(P21) = efecto de puesto + β·título + horas + edad centrada + edad² + sexo + error",
+    "blocks": [
+      [
+        "Por qué y en qué orden",
+        "Primero muestra amplia: asociación general dentro de puestos. Luego cinco puestos: detalle y heterogeneidad. Estandarización: composición común. Varianza/Theil: dónde se distribuye la desigualdad."
+      ],
+      [
+        "Qué significan FWL y CR1",
+        "FWL resta medias ponderadas de cada puesto antes de estimar los controles. CR1 permite correlación de errores entre personas del mismo hogar; no reproduce todo el diseño de encuesta."
+      ]
+    ],
+    "takeaway": "Regresión: diferencia ajustada en log. Título: 100·[exp(β)−1]. No mide un rendimiento causal.",
+    "note": "Región y sector son sensibilidad. No se controla experiencia ni antigüedad observadas; edad no las sustituye.",
+    "scripts": [
+      "09_ampliar_soporte.R",
+      "10_diagnosticos_modelo_principal.R"
+    ],
+    "utils": [
+      "ajustar_puesto.R",
+      "vcov_hogar.R"
+    ],
+    "files": [
+      "29_modelo_principal_log_amplio.csv",
+      "39_validacion_modelo_amplio.csv"
+    ],
+    "number": 9,
+    "source": "Fuente: elaboración propia con EPH-INDEC, 1T 2026. PONDIIO salvo indicación.",
+    "notes": "Guion y detalle técnico: ln(P21) = efecto de puesto + β·título + horas + edad centrada + edad² + sexo + error\nRegresión: diferencia ajustada en log. Título: 100·[exp(β)−1]. No mide un rendimiento causal.\nRegión y sector son sensibilidad. No se controla experiencia ni antigüedad observadas; edad no las sustituye.\nScripts: 09_ampliar_soporte.R, 10_diagnosticos_modelo_principal.R\nResultados: 29_modelo_principal_log_amplio.csv, 39_validacion_modelo_amplio.csv",
+    "original_number": 9
+  },
+  {
+    "title": "El log ayuda, pero no resuelve todos los problemas",
+    "kind": "image",
+    "image": "diagnosticos_amplios.png",
+    "takeaway": "Sobre los mismos 9.968 casos, asimetría residual: 3,28 en pesos y −0,60 en log.",
+    "note": "No se declara homocedasticidad o normalidad exacta. CR1 admite heterocedasticidad y dependencia intrahogar; no corrige omisión, selección ni el diseño EPH completo.",
+    "scripts": [
+      "09_ampliar_soporte.R",
+      "10_diagnosticos_modelo_principal.R"
+    ],
+    "files": [
+      "32_diagnosticos_modelo_amplio.csv"
+    ],
+    "number": 10,
+    "source": "Fuente: elaboración propia con EPH-INDEC, 1T 2026. PONDIIO salvo indicación.",
+    "notes": "Guion y detalle técnico: \nSobre los mismos 9.968 casos, asimetría residual: 3,28 en pesos y −0,60 en log.\nNo se declara homocedasticidad o normalidad exacta. CR1 admite heterocedasticidad y dependencia intrahogar; no corrige omisión, selección ni el diseño EPH completo.\nScripts: 09_ampliar_soporte.R, 10_diagnosticos_modelo_principal.R\nResultados: 32_diagnosticos_modelo_amplio.csv",
+    "original_number": 10
+  },
+  {
+    "title": "La asociación persiste al considerar los controles",
+    "kind": "image",
+    "image": "principal_log_diapositiva.png",
+    "takeaway": "Sin controles: +95,9 % → con puesto: +35,7 % → con puesto y controles: +28,6 % (IC 19,1–39,0 %).",
+    "note": "p ≈ 1,75 × 10⁻¹⁰; R² ponderado global=0,702; CR1 por hogar. Misma muestra log; cambios descriptivos según orden de controles. Brecha aritmética cruda: 89,3 %.",
+    "scripts": [
+      "09_ampliar_soporte.R"
+    ],
+    "files": [
+      "29_modelo_principal_log_amplio.csv",
+      "45_brecha_cruda_y_modelos_log.csv"
+    ],
+    "number": 11,
+    "source": "Fuente: elaboración propia con EPH-INDEC, 1T 2026. PONDIIO salvo indicación.",
+    "notes": "Guion y detalle técnico: \nSin controles: +95,9 % → con puesto: +35,7 % → con puesto y controles: +28,6 % (IC 19,1–39,0 %).\np ≈ 1,75 × 10⁻¹⁰; R² ponderado global=0,702; CR1 por hogar. Misma muestra log; cambios descriptivos según orden de controles. Brecha aritmética cruda: 89,3 %.\nScripts: 09_ampliar_soporte.R\nResultados: 29_modelo_principal_log_amplio.csv, 45_brecha_cruda_y_modelos_log.csv",
+    "original_number": 12
+  },
+  {
+    "title": "Los chequeos mantienen una asociación positiva",
+    "kind": "image",
+    "image": "sensibilidades_principal.png",
+    "takeaway": "Principal: 28,6 %; P99: 28,4 %; sin el caso más influyente: 27,2 %; solo puestos con ambos grupos: 28,6 %.",
+    "note": "Los cambios son de sensibilidad, no pruebas de equivalencia. En pesos, muestra amplia: +$399.533; en log no corresponde convertir directamente ese coeficiente a pesos.",
+    "scripts": [
+      "09_ampliar_soporte.R",
+      "10_diagnosticos_modelo_principal.R"
+    ],
+    "files": [
+      "27_soporte_ampliado.csv",
+      "41_sensibilidades_principal_log.csv"
+    ],
+    "number": 12,
+    "source": "Fuente: elaboración propia con EPH-INDEC, 1T 2026. PONDIIO salvo indicación.",
+    "notes": "Guion y detalle técnico: \nPrincipal: 28,6 %; P99: 28,4 %; sin el caso más influyente: 27,2 %; solo puestos con ambos grupos: 28,6 %.\nLos cambios son de sensibilidad, no pruebas de equivalencia. En pesos, muestra amplia: +$399.533; en log no corresponde convertir directamente ese coeficiente a pesos.\nScripts: 09_ampliar_soporte.R, 10_diagnosticos_modelo_principal.R\nResultados: 27_soporte_ampliado.csv, 41_sensibilidades_principal_log.csv",
+    "original_number": 13
+  },
+  {
+    "title": "Con título universitario se gana más en estos cinco puestos",
+    "kind": "communicative",
+    "image": "comunicativo_diapositiva.png",
+    "takeaway": "La diferencia observada va de 19 % en educación a 81 % en la administración pública.",
+    "note": "Se ocultan dos ingresos superiores a $4 millones solo en los puntos de fondo. Los promedios los incluyen. Comparación descriptiva, no causal.",
+    "scripts": [
+      "07_graficos_instancia3.R"
+    ],
+    "files": [
+      "grupo_25_comunicativo.jpg",
+      "13_modelos.csv"
+    ],
+    "number": 13,
+    "source": "Fuente: elaboración propia con EPH-INDEC, primer trimestre de 2026.",
+    "notes": "Guion y detalle técnico: Ingreso mensual promedio de asalariados de 18 a 65 años. EPH, primer trimestre de 2026.\nLa diferencia observada va de 19 % en educación a 81 % en la administración pública.\nSe ocultan dos ingresos superiores a $4 millones solo en los puntos de fondo. Los promedios los incluyen. Comparación descriptiva, no causal.\nScripts: 07_graficos_instancia3.R\nResultados: grupo_25_comunicativo.jpg, 13_modelos.csv",
+    "lead": "Ingreso mensual promedio de asalariados de 18 a 65 años. EPH, primer trimestre de 2026.",
+    "original_number": 11
+  },
+  {
+    "title": "Los ingresos se dispersan y los grupos se superponen",
+    "kind": "figure",
+    "image": "exploratorio_diapositiva.png",
+    "takeaway": "Las rectas educativas se aproximan en educación; hay amplia dispersión. Son patrones descriptivos, no igualdad demostrada. Contraste ajustado: diapositiva 16.",
+    "note": "n=1.036; ingreso en escala log; tamaño=PONDIIO; rectas descriptivas solo con n≥20. Ingreso mensual y horas semanales.",
+    "scripts": [
+      "07_graficos_instancia3.R",
+      "10_diagnosticos_modelo_principal.R"
+    ],
+    "files": [
+      "grupo_25_exploratorio.jpg"
+    ],
+    "number": 14,
+    "source": "Fuente: elaboración propia con EPH-INDEC, 1T 2026. PONDIIO salvo indicación.",
+    "notes": "Guion y detalle técnico: \nLas rectas educativas se aproximan en educación; hay amplia dispersión. Son patrones descriptivos, no igualdad demostrada. Contraste ajustado: diapositiva 16.\nn=1.036; ingreso en escala log; tamaño=PONDIIO; rectas descriptivas solo con n≥20. Ingreso mensual y horas semanales.\nScripts: 07_graficos_instancia3.R, 10_diagnosticos_modelo_principal.R\nResultados: grupo_25_exploratorio.jpg",
+    "original_number": 14
+  },
+  {
+    "title": "Igualar la distribución de puestos cambia poco la brecha",
+    "kind": "table",
+    "table": {
+      "headers": [
+        "Distribución de puestos",
+        "Sin título univ.",
+        "Con título univ.",
+        "Brecha"
+      ],
+      "rows": [
+        [
+          "Observada",
+          "$976.680",
+          "$1.505.830",
+          "54,2 %"
+        ],
+        [
+          "Común",
+          "$979.540",
+          "$1.487.603",
+          "51,9 %"
+        ]
+      ],
+      "widths": [
+        430,
+        250,
+        250,
+        230
+      ]
+    },
+    "lead": "Mismas 1.447 personas; distribución común de los cinco puestos para ambos grupos.",
+    "takeaway": "La brecha baja 2,3 puntos porcentuales (2,31 sin redondear). Es descriptivo: no se contrastó la significancia de ese cambio.",
+    "note": "No ajusta horas, edad ni sexo. n=1.447; otra muestra y otro estimando que el principal log.",
+    "scripts": [
+      "03_estandarizacion.R"
+    ],
+    "files": [
+      "11_soporte_y_kish.csv",
+      "12_estandarizacion.csv"
+    ],
+    "number": 15,
+    "source": "Fuente: elaboración propia con EPH-INDEC, 1T 2026. PONDIIO salvo indicación.",
+    "notes": "Guion y detalle técnico: Mismas 1.447 personas; distribución común de los cinco puestos para ambos grupos.\nLa brecha baja 2,3 puntos porcentuales (2,31 sin redondear). Es descriptivo: no se contrastó la significancia de ese cambio.\nNo ajusta horas, edad ni sexo. n=1.447; otra muestra y otro estimando que el principal log.\nScripts: 03_estandarizacion.R\nResultados: 11_soporte_y_kish.csv, 12_estandarizacion.csv",
+    "original_number": 15
+  },
+  {
+    "title": "La diferencia ajustada varía entre los cinco puestos",
+    "kind": "image",
+    "image": "brechas_puestos_diapositiva.png",
+    "takeaway": "En estos cinco puestos, Wald p = 0,022; tras Holm, solo administración pública conserva evidencia al 5 %.",
+    "note": "IC individuales sin ajuste múltiple; p ajustados por Holm. Heterogeneidad exploratoria solo en cinco puestos (73,4 % estatal con PONDIIO), no en todo el soporte.",
+    "scripts": [
+      "03_estandarizacion.R",
+      "04_regresiones.R"
+    ],
+    "files": [
+      "14_wald_interaccion.csv",
+      "15_brechas_ajustadas_por_puesto.csv"
+    ],
+    "number": 16,
+    "source": "Fuente: elaboración propia con EPH-INDEC, 1T 2026. PONDIIO salvo indicación.",
+    "notes": "Guion y detalle técnico: \nEn estos cinco puestos, Wald p = 0,022; tras Holm, solo administración pública conserva evidencia al 5 %.\nIC individuales sin ajuste múltiple; p ajustados por Holm. Heterogeneidad exploratoria solo en cinco puestos (73,4 % estatal con PONDIIO), no en todo el soporte.\nScripts: 03_estandarizacion.R, 04_regresiones.R\nResultados: 14_wald_interaccion.csv, 15_brechas_ajustadas_por_puesto.csv",
+    "original_number": 16
+  },
+  {
+    "title": "La desigualdad depende de qué puestos comparamos",
+    "kind": "image",
+    "image": "descomposicion_soportes.png",
+    "takeaway": "Entre puestos: varianza 7,7 % → 37,2 %; Theil 9,5 % → 42,3 %. El soporte cambia la lectura.",
+    "note": "Cinco puestos: n=1.047. Ampliado: 170 puestos, n=7.823, sin filtro de horas. No es el principal log. Desglose completo en anexo J.",
+    "scripts": [
+      "06_varianza_y_theil.R",
+      "09_ampliar_soporte.R"
+    ],
+    "utils": [
+      "descomponer.R"
+    ],
+    "files": [
+      "25_varianza_y_theil.csv",
+      "33_descomposicion_soporte_ampliado.csv"
+    ],
+    "number": 17,
+    "source": "Fuente: elaboración propia con EPH-INDEC, 1T 2026. PONDIIO salvo indicación.",
+    "notes": "Guion y detalle técnico: \nEntre puestos: varianza 7,7 % → 37,2 %; Theil 9,5 % → 42,3 %. El soporte cambia la lectura.\nCinco puestos: n=1.047. Ampliado: 170 puestos, n=7.823, sin filtro de horas. No es el principal log. Desglose completo en anexo J.\nScripts: 06_varianza_y_theil.R, 09_ampliar_soporte.R\nResultados: 25_varianza_y_theil.csv, 33_descomposicion_soporte_ampliado.csv",
+    "original_number": 17
+  },
+  {
+    "title": "El título se asocia con más ingreso, con límites",
+    "kind": "text",
+    "lead": "En el principal log, el ingreso asociado al título es 28,6 % mayor, condicional a puesto, horas, edad y sexo (IC 19,1–39,0 %).",
+    "blocks": [
+      [
+        "Magnitud económica",
+        "Brecha aritmética cruda: 89,3 %. El 28,6 % es una diferencia multiplicativa condicional de magnitud relevante, no una variación causal del sueldo individual."
+      ],
+      [
+        "Alcance y comparación con terciario",
+        "En cinco puestos, el contraste universitario–terciario da +$416.779 en el modelo de tres grupos (n=1.047). Es evidencia complementaria localizada. La heterogeneidad no se contrastó en todo el soporte amplio."
+      ]
+    ],
+    "takeaway": "Los $399.533 del amplio en pesos no convierten el 28,6 %: cambian escala y muestra. Tener el mismo código de ocupación no garantiza las mismas tareas ni antigüedad.",
+    "scripts": [
+      "09_ampliar_soporte.R",
+      "10_diagnosticos_modelo_principal.R"
+    ],
+    "files": [
+      "29_modelo_principal_log_amplio.csv",
+      "41_sensibilidades_principal_log.csv"
+    ],
+    "number": 18,
+    "source": "Fuente: elaboración propia con EPH-INDEC, 1T 2026. PONDIIO salvo indicación.",
+    "notes": "Guion y detalle técnico: En el principal log, el ingreso asociado al título es 28,6 % mayor, condicional a puesto, horas, edad y sexo (IC 19,1–39,0 %).\nLos $399.533 del amplio en pesos no convierten el 28,6 %: cambian escala y muestra. Tener el mismo código de ocupación no garantiza las mismas tareas ni antigüedad.\n\nScripts: 09_ampliar_soporte.R, 10_diagnosticos_modelo_principal.R\nResultados: 29_modelo_principal_log_amplio.csv, 41_sensibilidades_principal_log.csv",
+    "original_number": 18
+  },
+  {
+    "title": "Límites del trabajo y qué podríamos sumar",
+    "kind": "text",
+    "lead": "Las limitaciones orientan el siguiente análisis, sin convertir las sensibilidades en pruebas causales.",
+    "blocks": [
+      [
+        "Mejorar comparabilidad",
+        "Evaluar PP07A (antigüedad categórica disponible, omitida en el principal), otros trimestres y tareas. Ampliar el contraste de heterogeneidad más allá de cinco puestos."
+      ],
+      [
+        "Mejorar inferencia y selección",
+        "Incorporar diseño complejo de encuesta; estudiar no respuesta y horas cero. Validar estabilidad fuera de este trimestre y revisar alternativas de especificación."
+      ]
+    ],
+    "takeaway": "Edad no sustituye antigüedad. El principal documenta una asociación condicional; no el efecto de obtener un diploma.",
+    "scripts": [
+      "09_ampliar_soporte.R",
+      "10_diagnosticos_modelo_principal.R"
+    ],
+    "files": [
+      "29_modelo_principal_log_amplio.csv",
+      "41_sensibilidades_principal_log.csv"
+    ],
+    "number": 19,
+    "source": "Fuente: elaboración propia con EPH-INDEC, 1T 2026. PONDIIO salvo indicación.",
+    "notes": "Guion y detalle técnico: Las limitaciones orientan el siguiente análisis, sin convertir las sensibilidades en pruebas causales.\nEdad no sustituye antigüedad. El principal documenta una asociación condicional; no el efecto de obtener un diploma.\n\nScripts: 09_ampliar_soporte.R, 10_diagnosticos_modelo_principal.R\nResultados: 29_modelo_principal_log_amplio.csv, 41_sensibilidades_principal_log.csv",
+    "original_number": 19
+  },
+  {
+    "title": "¡Muchas gracias!",
+    "kind": "close",
+    "subtitle": "Grupo 25 · Ciencia de Datos\nDatos, código, tablas, figuras y guía de ejecución en el repositorio",
+    "takeaway": "Una asociación consistente en los chequeos realizados, no una explicación causal completa.",
+    "scripts": [
+      "00_ejecutar_todo.R"
+    ],
+    "files": [
+      "README.md"
+    ],
+    "number": 20,
+    "source": "Fuente: elaboración propia con EPH-INDEC, 1T 2026. PONDIIO salvo indicación.",
+    "notes": "Guion y detalle técnico: \nUna asociación consistente en los chequeos realizados, no una explicación causal completa.\n\nScripts: 00_ejecutar_todo.R\nResultados: README.md",
+    "original_number": 20
+  },
+  {
+    "title": "Anexo A1 · Variables y faltantes (1/3)",
+    "kind": "table",
+    "annex": true,
+    "table": {
+      "headers": [
+        "Variable",
+        "Tipo / unidad",
+        "NA",
+        "Código / inválido"
+      ],
+      "rows": [
+        [
+          "ANO4",
+          "Numérica discreta",
+          "0",
+          "0"
+        ],
+        [
+          "TRIMESTRE",
+          "Numérica discreta",
+          "0",
+          "0"
+        ],
+        [
+          "CODUSU",
+          "Categórica/identificador",
+          "0",
+          "0"
+        ],
+        [
+          "NRO_HOGAR",
+          "Categórica/identificador",
+          "0",
+          "0"
+        ],
+        [
+          "COMPONENTE",
+          "Categórica/identificador",
+          "0",
+          "0"
+        ],
+        [
+          "CH06",
+          "Numérica discreta",
+          "0",
+          "0"
+        ],
+        [
+          "ESTADO",
+          "Categórica",
+          "0",
+          "0"
+        ],
+        [
+          "CAT_OCUP",
+          "Categórica",
+          "0",
+          "0"
+        ]
+      ],
+      "widths": [
+        360,
+        470,
+        100,
+        230
+      ]
+    },
+    "takeaway": "Denominador: 13.632 asalariados. NA literales y códigos especiales se distinguen; los motivos pueden superponerse.",
+    "scripts": [
+      "01_preparar_datos.R",
+      "08_graficos_resultados.R",
+      "10_diagnosticos_modelo_principal.R"
+    ],
+    "files": [
+      "47_variables_y_faltantes.csv"
+    ],
+    "number": 21,
+    "source": "Fuente: elaboración propia con EPH-INDEC, 1T 2026. PONDIIO salvo indicación.",
+    "notes": "Guion y detalle técnico: \nDenominador: 13.632 asalariados. NA literales y códigos especiales se distinguen; los motivos pueden superponerse.\nCH13=9: 1 caso; no impide necesariamente clasificar título en niveles inferiores. Reglas completas y descripción: tabla 47.\nScripts: 01_preparar_datos.R, 08_graficos_resultados.R, 10_diagnosticos_modelo_principal.R\nResultados: 47_variables_y_faltantes.csv",
+    "note": "CH13=9: 1 caso; no impide necesariamente clasificar título en niveles inferiores. Reglas completas y descripción: tabla 47.",
+    "original_number": 21
+  },
+  {
+    "title": "Anexo A2 · Variables y faltantes (2/3)",
+    "kind": "table",
+    "annex": true,
+    "table": {
+      "headers": [
+        "Variable",
+        "Tipo / unidad",
+        "NA",
+        "Código / inválido"
+      ],
+      "rows": [
+        [
+          "CH04",
+          "Categórica",
+          "0",
+          "0"
+        ],
+        [
+          "CH10",
+          "Categórica",
+          "0",
+          "0"
+        ],
+        [
+          "CH12",
+          "Categórica",
+          "0",
+          "5"
+        ],
+        [
+          "CH13",
+          "Categórica",
+          "0",
+          "1"
+        ],
+        [
+          "NIVEL_ED",
+          "Categórica",
+          "0",
+          "0"
+        ],
+        [
+          "PP04D_COD",
+          "Categórica",
+          "0",
+          "16"
+        ],
+        [
+          "PP04B_COD",
+          "Categórica",
+          "0",
+          "66"
+        ],
+        [
+          "PP04A",
+          "Categórica",
+          "0",
+          "0"
+        ]
+      ],
+      "widths": [
+        360,
+        470,
+        100,
+        230
+      ]
+    },
+    "takeaway": "Denominador: 13.632 asalariados. NA literales y códigos especiales se distinguen; los motivos pueden superponerse.",
+    "scripts": [
+      "01_preparar_datos.R",
+      "08_graficos_resultados.R",
+      "10_diagnosticos_modelo_principal.R"
+    ],
+    "files": [
+      "47_variables_y_faltantes.csv"
+    ],
+    "number": 22,
+    "source": "Fuente: elaboración propia con EPH-INDEC, 1T 2026. PONDIIO salvo indicación.",
+    "notes": "Guion y detalle técnico: \nDenominador: 13.632 asalariados. NA literales y códigos especiales se distinguen; los motivos pueden superponerse.\nCH13=9: 1 caso; no impide necesariamente clasificar título en niveles inferiores. Reglas completas y descripción: tabla 47.\nScripts: 01_preparar_datos.R, 08_graficos_resultados.R, 10_diagnosticos_modelo_principal.R\nResultados: 47_variables_y_faltantes.csv",
+    "note": "CH13=9: 1 caso; no impide necesariamente clasificar título en niveles inferiores. Reglas completas y descripción: tabla 47.",
+    "original_number": 31
+  },
+  {
+    "title": "Anexo A3 · Variables y faltantes (3/3)",
+    "kind": "table",
+    "annex": true,
+    "table": {
+      "headers": [
+        "Variable",
+        "Tipo / unidad",
+        "NA",
+        "Código / inválido"
+      ],
+      "rows": [
+        [
+          "REGION",
+          "Categórica",
+          "0",
+          "0"
+        ],
+        [
+          "PP3E_TOT",
+          "Numérica discreta",
+          "0",
+          "20"
+        ],
+        [
+          "PP07H",
+          "Categórica",
+          "0",
+          "0"
+        ],
+        [
+          "P21",
+          "Numérica",
+          "0",
+          "2322"
+        ],
+        [
+          "PONDERA",
+          "Numérica",
+          "0",
+          "0"
+        ],
+        [
+          "PONDIIO",
+          "Numérica",
+          "0",
+          "2322"
+        ],
+        [
+          "P47T",
+          "Numérica",
+          "0",
+          "0"
+        ]
+      ],
+      "widths": [
+        360,
+        470,
+        100,
+        230
+      ]
+    },
+    "takeaway": "Denominador: 13.632 asalariados. NA literales y códigos especiales se distinguen; los motivos pueden superponerse.",
+    "scripts": [
+      "01_preparar_datos.R",
+      "08_graficos_resultados.R",
+      "10_diagnosticos_modelo_principal.R"
+    ],
+    "files": [
+      "47_variables_y_faltantes.csv"
+    ],
+    "number": 23,
+    "source": "Fuente: elaboración propia con EPH-INDEC, 1T 2026. PONDIIO salvo indicación.",
+    "notes": "Guion y detalle técnico: \nDenominador: 13.632 asalariados. NA literales y códigos especiales se distinguen; los motivos pueden superponerse.\nCH13=9: 1 caso; no impide necesariamente clasificar título en niveles inferiores. Reglas completas y descripción: tabla 47.\nScripts: 01_preparar_datos.R, 08_graficos_resultados.R, 10_diagnosticos_modelo_principal.R\nResultados: 47_variables_y_faltantes.csv",
+    "note": "CH13=9: 1 caso; no impide necesariamente clasificar título en niveles inferiores. Reglas completas y descripción: tabla 47.",
+    "original_number": 32
+  },
+  {
+    "title": "Anexo B · Ingreso antes y después",
+    "kind": "table",
+    "annex": true,
+    "table": {
+      "headers": [
+        "Etapa",
+        "n",
+        "Media",
+        "Mediana",
+        "Desvío"
+      ],
+      "rows": [
+        [
+          "Ingreso válido antes de filtro de horas",
+          "11.260",
+          "$1.118.725",
+          "$920.000",
+          "$961.036"
+        ],
+        [
+          "Muestra amplia en pesos",
+          "10.156",
+          "$1.107.876",
+          "$900.000",
+          "$927.755"
+        ],
+        [
+          "Principal: ingreso positivo",
+          "9.968",
+          "$1.129.196",
+          "$950.000",
+          "$923.698"
+        ],
+        [
+          "Principal acotado al P99",
+          "9.968",
+          "$1.112.273",
+          "$950.000",
+          "$814.805"
+        ]
+      ],
+      "widths": [
+        450,
+        120,
+        200,
+        190,
+        200
+      ]
+    },
+    "takeaway": "Los cambios de etapa reflejan selección; P99 conserva personas. Desvío descriptivo, no error estándar.",
+    "note": "PONDIIO en todas las columnas de ingreso. El CSV también incluye edad y horas con datos válidos disponibles por variable.",
+    "scripts": [
+      "10_diagnosticos_modelo_principal.R"
+    ],
+    "files": [
+      "34_descriptivas_antes_despues_amplia.csv",
+      "42_descriptivas_p99_principal.csv"
+    ],
+    "number": 24,
+    "source": "Fuente: elaboración propia con EPH-INDEC, 1T 2026. PONDIIO salvo indicación.",
+    "notes": "Guion y detalle técnico: \nLos cambios de etapa reflejan selección; P99 conserva personas. Desvío descriptivo, no error estándar.\nPONDIIO en todas las columnas de ingreso. El CSV también incluye edad y horas con datos válidos disponibles por variable.\nScripts: 10_diagnosticos_modelo_principal.R\nResultados: 34_descriptivas_antes_despues_amplia.csv, 42_descriptivas_p99_principal.csv",
+    "original_number": 22
+  },
+  {
+    "title": "Anexo C · Soporte, ausencia semanal y terciario",
+    "kind": "table",
+    "annex": true,
+    "table": {
+      "headers": [
+        "Comparación",
+        "Resultado y cautela"
+      ],
+      "rows": [
+        [
+          "Kish en 40332/8600",
+          "7,74 y 7,69 antes del filtro de horas; alerta, no requisito principal."
+        ],
+        [
+          "Con horas cero e indicador, detalle",
+          "n=1.446; +$461.811. No se inventan horas positivas."
+        ],
+        [
+          "Universitario contra terciario, detalle",
+          "$416.779; IC95 $179.531 a $654.027. Modelo de tres grupos, n=1.047."
+        ],
+        [
+          "Principal amplio, puestos con ambos grupos",
+          "223 puestos, 5.540 personas; sensibilidad +28,55 %."
+        ],
+        [
+          "Modelos con otros soportes",
+          "No comparar pesos y porcentajes como si fueran el mismo estimando."
+        ]
+      ],
+      "widths": [
+        490,
+        670
+      ]
+    },
+    "takeaway": "La comparación restringida de 673 universitarios y terciarios usa otra muestra y ajuste que el modelo de tres grupos, n=1.047.",
+    "scripts": [
+      "03_estandarizacion.R",
+      "04_regresiones.R",
+      "05_outliers_y_sensibilidades.R",
+      "10_diagnosticos_modelo_principal.R"
+    ],
+    "files": [
+      "11_soporte_y_kish.csv",
+      "16_contraste_terciario.csv",
+      "28_sensibilidad_horas_cero.csv",
+      "41_sensibilidades_principal_log.csv"
+    ],
+    "number": 25,
+    "source": "Fuente: elaboración propia con EPH-INDEC, 1T 2026. PONDIIO salvo indicación.",
+    "notes": "Guion y detalle técnico: \nLa comparación restringida de 673 universitarios y terciarios usa otra muestra y ajuste que el modelo de tres grupos, n=1.047.\n\nScripts: 03_estandarizacion.R, 04_regresiones.R, 05_outliers_y_sensibilidades.R, 10_diagnosticos_modelo_principal.R\nResultados: 11_soporte_y_kish.csv, 16_contraste_terciario.csv, 28_sensibilidad_horas_cero.csv, 41_sensibilidades_principal_log.csv",
+    "original_number": 23
+  },
+  {
+    "title": "Anexo D · Influencia y comprobaciones del cálculo",
+    "kind": "table",
+    "annex": true,
+    "table": {
+      "headers": [
+        "Chequeo",
+        "Evidencia"
+      ],
+      "rows": [
+        [
+          "Caso de mayor influencia sobre título",
+          "Universitario; código 30333_4811; $5.040.000; 40 h; PONDIIO 5.964."
+        ],
+        [
+          "Sin ese caso",
+          "n=9.967; +27,18 %, IC95 17,91–37,17 %."
+        ],
+        [
+          "Observaciones con h=1",
+          "1.166: Cook de borrado de rango fijo no definido; no se eliminan del ajuste."
+        ],
+        [
+          "Absorción FWL versus indicadores",
+          "Coeficiente y CR1 comprobados numéricamente en cinco puestos."
+        ],
+        [
+          "Fórmula de borrado versus reestimación",
+          "El cambio del coeficiente de título se verifica por estimar sin el caso."
+        ]
+      ],
+      "widths": [
+        440,
+        720
+      ]
+    },
+    "takeaway": "El diagnóstico identifica influencia, no error de medición. No se muestran identificadores de personas u hogares.",
+    "scripts": [
+      "10_diagnosticos_modelo_principal.R"
+    ],
+    "utils": [
+      "influencia_puesto.R",
+      "ajustar_puesto.R"
+    ],
+    "files": [
+      "39_validacion_modelo_amplio.csv",
+      "40_caso_influyente_principal.csv"
+    ],
+    "number": 26,
+    "source": "Fuente: elaboración propia con EPH-INDEC, 1T 2026. PONDIIO salvo indicación.",
+    "notes": "Guion y detalle técnico: \nEl diagnóstico identifica influencia, no error de medición. No se muestran identificadores de personas u hogares.\n\nScripts: 10_diagnosticos_modelo_principal.R\nResultados: 39_validacion_modelo_amplio.csv, 40_caso_influyente_principal.csv",
+    "original_number": 24
+  },
+  {
+    "title": "Anexo E · Inferencia y lectura de coeficientes",
+    "kind": "text",
+    "annex": true,
+    "lead": "WLS con PONDIIO; efectos fijos absorbidos; CR1 agrupado por hogar. No es la varianza oficial del diseño completo EPH.",
+    "blocks": [
+      [
+        "Coeficiente principal",
+        "β=0,251898; EE=0,039416; t=6,3908; gl=7.350; p≈1,75 × 10⁻¹⁰. R² ponderado global=0,702. H0: β=0, bilateral. IC porcentual: 100 × [exp(límite)−1]."
+      ],
+      [
+        "Heterogeneidad en cinco puestos",
+        "Wald conjunto de cuatro interacciones: igualdad de brechas. Holm ajusta cinco pruebas individuales contra cero; no convierte los IC individuales en simultáneos."
+      ]
+    ],
+    "takeaway": "R² global alto con muchos efectos fijos no prueba predicción fuera de muestra ni identificación causal.",
+    "scripts": [
+      "04_regresiones.R",
+      "09_ampliar_soporte.R"
+    ],
+    "files": [
+      "14_wald_interaccion.csv",
+      "29_modelo_principal_log_amplio.csv"
+    ],
+    "number": 27,
+    "source": "Fuente: elaboración propia con EPH-INDEC, 1T 2026. PONDIIO salvo indicación.",
+    "notes": "Guion y detalle técnico: WLS con PONDIIO; efectos fijos absorbidos; CR1 agrupado por hogar. No es la varianza oficial del diseño completo EPH.\nR² global alto con muchos efectos fijos no prueba predicción fuera de muestra ni identificación causal.\n\nScripts: 04_regresiones.R, 09_ampliar_soporte.R\nResultados: 14_wald_interaccion.csv, 29_modelo_principal_log_amplio.csv",
+    "original_number": 25
+  },
+  {
+    "title": "Anexo F · Reproducción y trazabilidad",
+    "kind": "table",
+    "annex": true,
+    "table": {
+      "headers": [
+        "Etapa",
+        "Archivos y responsabilidad"
+      ],
+      "rows": [
+        [
+          "Preparación y descriptivos",
+          "01 y 02 leen raw/auxiliar, guardan RDS y tablas."
+        ],
+        [
+          "Detalle de cinco puestos",
+          "03–08: estandarización, regresiones, sensibilidades y gráficos de cinco puestos."
+        ],
+        [
+          "Análisis amplio actualizado",
+          "09 y 10: referencia principal, soporte, diagnósticos y sensibilidad."
+        ],
+        [
+          "Funciones y ejecución",
+          "utils/; script/00_ejecutar_todo.R lanza cada etapa en un proceso limpio."
+        ],
+        [
+          "Repositorio y documentación",
+          "README, datos, input, output, presentación, guías y mapa de resultados. Reproducción de las 47 tablas verificada en otra carpeta."
+        ]
+      ],
+      "widths": [
+        420,
+        740
+      ]
+    },
+    "takeaway": "Cada diapositiva tiene un mapa a scripts y archivos de resultados. La reproducción no elimina limitaciones estadísticas.",
+    "scripts": [
+      "00_ejecutar_todo.R"
+    ],
+    "files": [
+      "README.md",
+      "MAPA_DIAPOSITIVAS.csv"
+    ],
+    "number": 28,
+    "source": "Fuente: elaboración propia con EPH-INDEC, 1T 2026. PONDIIO salvo indicación.",
+    "notes": "Guion y detalle técnico: \nCada diapositiva tiene un mapa a scripts y archivos de resultados. La reproducción no elimina limitaciones estadísticas.\n\nScripts: 00_ejecutar_todo.R\nResultados: README.md, MAPA_DIAPOSITIVAS.csv",
+    "original_number": 26
+  },
+  {
+    "number": 29,
+    "title": "Anexo G · La composición cambia con el soporte",
+    "kind": "image",
+    "annex": true,
+    "image": "composicion_soportes.png",
+    "takeaway": "El sector estatal representa 20,5 % del principal y 73,4 % del análisis de cinco puestos (PONDIIO).",
+    "note": "Principal n=9.968; cinco puestos n=1.047. La diferencia refleja selección del soporte, no un cambio temporal.",
+    "source": "Fuente: elaboración propia con EPH-INDEC, 1T 2026.",
+    "scripts": [
+      "10_diagnosticos_modelo_principal.R"
+    ],
+    "files": [
+      "35_descriptivas_principal_por_titulo.csv"
+    ],
+    "notes": "Guion y detalle técnico: \nEl sector estatal representa 20,5 % del principal y 73,4 % del análisis de cinco puestos (PONDIIO).\nPrincipal n=9.968; cinco puestos n=1.047. La diferencia refleja selección del soporte, no un cambio temporal.\nScripts: 10_diagnosticos_modelo_principal.R\nResultados: 35_descriptivas_principal_por_titulo.csv",
+    "original_number": 27
+  },
+  {
+    "number": 30,
+    "title": "Anexo H · La no respuesta difiere por región",
+    "kind": "image",
+    "annex": true,
+    "image": "no_respuesta_region.png",
+    "takeaway": "Ingreso no utilizable: NOA 4,0 % frente a NEA 28,4 % y GBA 27,5 % (PONDERA).",
+    "note": "Universo: 13.632 asalariados. Las tasas describen no respuesta; por sí solas no identifican el sesgo de la brecha.",
+    "source": "Fuente: elaboración propia con EPH-INDEC, 1T 2026.",
+    "scripts": [
+      "10_diagnosticos_modelo_principal.R"
+    ],
+    "files": [
+      "04_no_respuesta_educacion.csv"
+    ],
+    "notes": "Guion y detalle técnico: \nIngreso no utilizable: NOA 4,0 % frente a NEA 28,4 % y GBA 27,5 % (PONDERA).\nUniverso: 13.632 asalariados. Las tasas describen no respuesta; por sí solas no identifican el sesgo de la brecha.\nScripts: 10_diagnosticos_modelo_principal.R\nResultados: 04_no_respuesta_educacion.csv",
+    "original_number": 28
+  },
+  {
+    "number": 31,
+    "title": "Anexo I · Influencia en la muestra principal",
+    "kind": "image",
+    "annex": true,
+    "image": "cook_principal.png",
+    "takeaway": "456 observaciones superan 4/n entre los casos con h<1. El gráfico usa raíz cuadrada para mostrar la cola.",
+    "note": "No se asigna Cook de borrado de rango fijo a h=1; esos 1.166 casos permanecen en la estimación. Las alertas no son errores comprobados.",
+    "source": "Fuente: elaboración propia con EPH-INDEC, 1T 2026.",
+    "scripts": [
+      "10_diagnosticos_modelo_principal.R"
+    ],
+    "files": [
+      "37_outliers_modelo_principal.csv"
+    ],
+    "notes": "Guion y detalle técnico: \n456 observaciones superan 4/n entre los casos con h<1. El gráfico usa raíz cuadrada para mostrar la cola.\nNo se asigna Cook de borrado de rango fijo a h=1; esos 1.166 casos permanecen en la estimación. Las alertas no son errores comprobados.\nScripts: 10_diagnosticos_modelo_principal.R\nResultados: 37_outliers_modelo_principal.csv",
+    "original_number": 29
+  },
+  {
+    "title": "Anexo J · Theil: desglose completo",
+    "kind": "table",
+    "table": {
+      "headers": [
+        "Componente de Theil",
+        "Cinco puestos, n=1.047",
+        "170 puestos, n=7.823"
+      ],
+      "rows": [
+        [
+          "Entre puestos",
+          "9,51 %",
+          "42,31 %"
+        ],
+        [
+          "Entre título dentro del puesto",
+          "14,76 %",
+          "5,14 %"
+        ],
+        [
+          "Dentro de puesto y título",
+          "75,73 %",
+          "52,56 %"
+        ],
+        [
+          "Theil T total",
+          "0,157",
+          "0,247"
+        ]
+      ],
+      "widths": [
+        580,
+        290,
+        290
+      ]
+    },
+    "lead": "T = promedio ponderado de (ingreso/media) × ln(ingreso/media). Ceros: contribución cero por continuidad.",
+    "takeaway": "Es invariante a la escala y descomponible, pero también sensible a ingresos altos. No es una prueba causal ni tiene máximo universal de 1.",
+    "scripts": [
+      "06_varianza_y_theil.R",
+      "09_ampliar_soporte.R"
+    ],
+    "files": [
+      "25_varianza_y_theil.csv",
+      "33_descomposicion_soporte_ampliado.csv"
+    ],
+    "number": 32,
+    "source": "Fuente: elaboración propia con EPH-INDEC, 1T 2026. PONDIIO salvo indicación.",
+    "notes": "Guion y detalle técnico: T = promedio ponderado de (ingreso/media) × ln(ingreso/media). Ceros: contribución cero por continuidad.\nEs invariante a la escala y descomponible, pero también sensible a ingresos altos. No es una prueba causal ni tiene máximo universal de 1.\n\nScripts: 06_varianza_y_theil.R, 09_ampliar_soporte.R\nResultados: 25_varianza_y_theil.csv, 33_descomposicion_soporte_ampliado.csv",
+    "annex": true,
+    "original_number": 30
+  },
+  {
+    "title": "Anexo M1 · Las devoluciones cambian el análisis principal",
+    "kind": "table",
+    "table": {
+      "headers": [
+        "Devolución y origen",
+        "Cambio incorporado"
+      ],
+      "rows": [
+        [
+          "Instancia 1: período, variables y descriptivos",
+          "EPH 1T 2026, pesos documentados y tablas antes/después."
+        ],
+        [
+          "Instancia 1: ocupación, sector y coherencia",
+          "Puesto CNO × rama; sector en sensibilidad. AUH y monotributo retirados."
+        ],
+        [
+          "Instancia 2: log o ingreso horario; muestra amplia",
+          "Principal: log mensual con horas, n=9.968. Referencia en pesos: n=10.156."
+        ],
+        [
+          "Instancia 2: varianza depende del soporte",
+          "Comparación de cinco y 170 puestos; se distinguen muestras."
+        ],
+        [
+          "Instancia 3: comunicativo accesible y textos amplios",
+          "Etiquetas directas; sin n, IC, ajuste ni ponderador en la pieza. Bajada y lectura simples."
+        ]
+      ],
+      "widths": [
+        330,
+        830
+      ]
+    },
+    "takeaway": "Los cinco puestos y sus gráficos se conservan como detalle, no como única evidencia.",
+    "scripts": [
+      "09_ampliar_soporte.R",
+      "10_diagnosticos_modelo_principal.R"
+    ],
+    "files": [
+      "29_modelo_principal_log_amplio.csv",
+      "33_descomposicion_soporte_ampliado.csv"
+    ],
+    "source": "Fuente: devoluciones docentes de las instancias 1, 2 y 3.",
+    "number": 33,
+    "notes": "Guion y detalle técnico: \nLos cinco puestos y sus gráficos se conservan como detalle, no como única evidencia.\nLas tres devoluciones originales se incluyen en auxiliar/; las correcciones orientan el análisis y la comunicación.\nScripts: 09_ampliar_soporte.R, 10_diagnosticos_modelo_principal.R\nResultados: 29_modelo_principal_log_amplio.csv, 33_descomposicion_soporte_ampliado.csv",
+    "note": "Las tres devoluciones originales se incluyen en auxiliar/; las correcciones orientan el análisis y la comunicación.",
+    "original_number": 3,
+    "annex": true
+  },
+  {
+    "title": "Anexo M2 · Una base trimestral, personas y dos ponderadores",
+    "kind": "table",
+    "table": {
+      "headers": [
+        "Variable / función",
+        "Tipo y unidad",
+        "NA / no utilizable"
+      ],
+      "rows": [
+        [
+          "P21: ingreso principal",
+          "Continuo, pesos/mes",
+          "0 / 2.322 (−9)"
+        ],
+        [
+          "Título: CH12 + CH13 + CH10",
+          "Categoría construida",
+          "5 no clasificables"
+        ],
+        [
+          "Puesto: CNO × rama",
+          "Categoría laboral",
+          "16 CNO / 66 rama"
+        ],
+        [
+          "PP3E_TOT: horas",
+          "Discreto, horas/semana",
+          "0 / 20; 1.283 ceros aparte"
+        ],
+        [
+          "CH06 / CH04",
+          "Edad (años) / sexo",
+          "0 / 0"
+        ],
+        [
+          "PONDIIO / PONDERA",
+          "Pesos de ingreso / personas",
+          "2.322 ≤0 / 0"
+        ],
+        [
+          "Clave persona y hogar",
+          "Identificadores para CR1",
+          "0; no se difunden perfiles individuales"
+        ]
+      ],
+      "widths": [
+        390,
+        370,
+        400
+      ]
+    },
+    "takeaway": "Título=1: CH12=7 y CH13=1, o CH12=8 (posgrado, grado previo supuesto).\nTítulo=0: terciario, universidad incompleta y niveles previos. Sin información suficiente: NA.",
+    "scripts": [
+      "01_preparar_datos.R",
+      "08_graficos_resultados.R"
+    ],
+    "files": [
+      "47_variables_y_faltantes.csv"
+    ],
+    "source": "Fuente: EPH-INDEC 1T 2026; diccionario generado por R.",
+    "number": 34,
+    "notes": "Guion y detalle técnico: EPH-INDEC, 1T 2026: 43.739 personas, 234 variables y cobertura de 31 aglomerados urbanos. Faltantes sobre 13.632 asalariados.\nTítulo=1: CH12=7 y CH13=1, o CH12=8 (posgrado, grado previo supuesto).\nTítulo=0: terciario, universidad incompleta y niveles previos. Sin información suficiente: NA.\nAuxiliar: etiquetas de cinco puestos, sin otra base empírica ni cruces externos. Ingresos declarados: riesgo de no respuesta y subdeclaración. Diccionario: A, K y L.\nScripts: 01_preparar_datos.R, 08_graficos_resultados.R\nResultados: 47_variables_y_faltantes.csv",
+    "lead": "EPH-INDEC, 1T 2026: 43.739 personas, 234 variables y cobertura de 31 aglomerados urbanos. Faltantes sobre 13.632 asalariados.",
+    "note": "Auxiliar: etiquetas de cinco puestos, sin otra base empírica ni cruces externos. Ingresos declarados: riesgo de no respuesta y subdeclaración. Diccionario: A, K y L.",
+    "original_number": 4,
+    "annex": true
+  },
+  {
+    "title": "Anexo M3 · De 43.739 registros a dos soportes de comparación",
+    "kind": "table",
+    "table": {
+      "headers": [
+        "Filtro o destino",
+        "n observado",
+        "Uso"
+      ],
+      "rows": [
+        [
+          "18–65 años / ocupados / asalariados",
+          "27.789 / 18.800 / 13.632",
+          "Delimitar población."
+        ],
+        [
+          "Título, ingreso y ocupación válidos",
+          "11.302",
+          "Antes de exigir rama válida."
+        ],
+        [
+          "También rama válida",
+          "11.260",
+          "Universo para construir puestos."
+        ],
+        [
+          "Horas y controles válidos, muestra amplia",
+          "10.156",
+          "Referencia en pesos."
+        ],
+        [
+          "Ingreso positivo, muestra principal",
+          "9.968",
+          "188 ceros salen solo para log."
+        ],
+        [
+          "Cinco puestos: antes / después de horas",
+          "1.447 / 1.047",
+          "Estandarización / regresión en cinco puestos."
+        ]
+      ],
+      "widths": [
+        610,
+        220,
+        330
+      ]
+    },
+    "takeaway": "Principal: 7.351 hogares y 1.926 puestos; 223 puestos con ambos grupos, 5.540 personas.",
+    "scripts": [
+      "01_preparar_datos.R",
+      "09_ampliar_soporte.R"
+    ],
+    "files": [
+      "01_flujo.csv",
+      "30_flujo_log_amplio.csv",
+      "31_soporte_modelo_principal.csv"
+    ],
+    "number": 35,
+    "source": "Fuente: elaboración propia con EPH-INDEC, 1T 2026. PONDIIO salvo indicación.",
+    "notes": "Guion y detalle técnico: \nPrincipal: 7.351 hogares y 1.926 puestos; 223 puestos con ambos grupos, 5.540 personas.\n\nScripts: 01_preparar_datos.R, 09_ampliar_soporte.R\nResultados: 01_flujo.csv, 30_flujo_log_amplio.csv, 31_soporte_modelo_principal.csv",
+    "original_number": 5,
+    "annex": true
+  },
+  {
+    "title": "Anexo M4 · La muestra amplia tiene ingresos y jornadas distintos",
+    "kind": "split",
+    "table": {
+      "headers": [
+        "Principal, n=9.968",
+        "Sin título univ.",
+        "Con título univ."
+      ],
+      "rows": [
+        [
+          "n observado",
+          "8.726",
+          "1.242"
+        ],
+        [
+          "Media, millones $",
+          "0,997",
+          "1,888"
+        ],
+        [
+          "Desvío, millones $",
+          "0,738",
+          "1,397"
+        ],
+        [
+          "Mediana, millones $",
+          "0,890",
+          "1,500"
+        ],
+        [
+          "Horas / edad, medias",
+          "37,5 / 38,6",
+          "36,2 / 41,6"
+        ],
+        [
+          "Mujeres",
+          "42,8 %",
+          "52,1 %"
+        ],
+        [
+          "Sector estatal",
+          "17,1 %",
+          "39,7 %"
+        ]
+      ],
+      "widths": [
+        1.5,
+        1,
+        1
+      ]
+    },
+    "takeaway": "Brecha de medias aritméticas: +89,3 %. No es el mismo estimando que el +28,6 % condicional en log.",
+    "note": "PONDIIO. Terciario completo: 11,4 % del grupo sin título universitario. Los cambios de composición antes/después se muestran en la diapositiva 8.",
+    "scripts": [
+      "10_diagnosticos_modelo_principal.R"
+    ],
+    "files": [
+      "35_descriptivas_principal_por_titulo.csv",
+      "36_categoricas_principal.csv",
+      "43_composicion_por_grupo_principal.csv",
+      "45_brecha_cruda_y_modelos_log.csv"
+    ],
+    "number": 36,
+    "source": "Fuente: elaboración propia con EPH-INDEC, 1T 2026. PONDIIO salvo indicación.",
+    "notes": "Guion y detalle técnico: \nBrecha de medias aritméticas: +89,3 %. No es el mismo estimando que el +28,6 % condicional en log.\nPONDIIO. Terciario completo: 11,4 % del grupo sin título universitario. Los cambios de composición antes/después se muestran en la diapositiva 8.\nScripts: 10_diagnosticos_modelo_principal.R\nResultados: 35_descriptivas_principal_por_titulo.csv, 36_categoricas_principal.csv, 43_composicion_por_grupo_principal.csv, 45_brecha_cruda_y_modelos_log.csv",
+    "image": "densidad_cuerpo.png",
+    "original_number": 7,
+    "annex": true
+  },
+  {
+    "title": "Anexo M5 · Extremos plausibles se conservan y se evalúan",
+    "kind": "outliers_chart",
+    "table": {
+      "headers": [
+        "Criterio",
+        "Hallazgo / decisión"
+      ],
+      "rows": [
+        [
+          "1,5 × IQR de log(P21)",
+          "393 bajos; 58 altos. Se conservan: no comprobamos errores."
+        ],
+        [
+          "P99 ponderado: $4,8 M",
+          "58 acotados solo en sensibilidad; mismas personas."
+        ],
+        [
+          "Influencia",
+          "Cook y borrado; h=1: 1.166 puestos unipersonales."
+        ]
+      ],
+      "widths": [
+        1,
+        1.55
+      ]
+    },
+    "takeaway": "El log evalúa extremos relativos ante la cola derecha. Plausibilidad e influencia no certifican errores.",
+    "note": "Media y mediana con PONDIIO. El antes/después cambia la composición; no es una población idéntica. P99 conserva n=9.968; detalle completo en anexo B.",
+    "scripts": [
+      "10_diagnosticos_modelo_principal.R"
+    ],
+    "files": [
+      "37_outliers_modelo_principal.csv",
+      "38_perfil_extremos_principal.csv",
+      "40_caso_influyente_principal.csv",
+      "42_descriptivas_p99_principal.csv",
+      "44_verificacion_iqr_y_p99.csv",
+      "46_verificacion_h_uno_y_singletons.csv"
+    ],
+    "number": 37,
+    "source": "Fuente: elaboración propia con EPH-INDEC, 1T 2026. PONDIIO salvo indicación.",
+    "notes": "Guion y detalle técnico: \nEl log evalúa extremos relativos ante la cola derecha. Plausibilidad e influencia no certifican errores.\nMedia y mediana con PONDIIO. El antes/después cambia la composición; no es una población idéntica. P99 conserva n=9.968; detalle completo en anexo B.\nScripts: 10_diagnosticos_modelo_principal.R\nResultados: 37_outliers_modelo_principal.csv, 38_perfil_extremos_principal.csv, 40_caso_influyente_principal.csv, 42_descriptivas_p99_principal.csv, 44_verificacion_iqr_y_p99.csv, 46_verificacion_h_uno_y_singletons.csv",
+    "image": "outliers_log_iqr.png",
+    "original_number": 8,
+    "annex": true
+  },
+  {
+    "title": "Anexo M6 · Modelo principal: comparar dentro de ocupación y rama",
+    "kind": "text",
+    "lead": "ln(P21) = efecto de puesto + β·título + horas + edad centrada + edad² + sexo + error",
+    "blocks": [
+      [
+        "Por qué y en qué orden",
+        "Primero muestra amplia: asociación general dentro de puestos. Luego cinco puestos: detalle y heterogeneidad. Estandarización: composición común. Varianza/Theil: dónde se distribuye la desigualdad."
+      ],
+      [
+        "Qué significan FWL y CR1",
+        "FWL resta medias ponderadas de cada puesto antes de estimar los controles. CR1 permite correlación de errores entre personas del mismo hogar; no reproduce todo el diseño de encuesta."
+      ]
+    ],
+    "takeaway": "Regresión: diferencia ajustada en log. Título: 100·[exp(β)−1]. No mide un rendimiento causal.",
+    "note": "Región y sector son sensibilidad. No se controla experiencia ni antigüedad observadas; edad no las sustituye.",
+    "scripts": [
+      "09_ampliar_soporte.R",
+      "10_diagnosticos_modelo_principal.R"
+    ],
+    "utils": [
+      "ajustar_puesto.R",
+      "vcov_hogar.R"
+    ],
+    "files": [
+      "29_modelo_principal_log_amplio.csv",
+      "39_validacion_modelo_amplio.csv"
+    ],
+    "number": 38,
+    "source": "Fuente: elaboración propia con EPH-INDEC, 1T 2026. PONDIIO salvo indicación.",
+    "notes": "Guion y detalle técnico: ln(P21) = efecto de puesto + β·título + horas + edad centrada + edad² + sexo + error\nRegresión: diferencia ajustada en log. Título: 100·[exp(β)−1]. No mide un rendimiento causal.\nRegión y sector son sensibilidad. No se controla experiencia ni antigüedad observadas; edad no las sustituye.\nScripts: 09_ampliar_soporte.R, 10_diagnosticos_modelo_principal.R\nResultados: 29_modelo_principal_log_amplio.csv, 39_validacion_modelo_amplio.csv",
+    "original_number": 9,
+    "annex": true
+  },
+  {
+    "title": "Anexo M7 · Igualar la composición modifica poco la brecha",
+    "kind": "table",
+    "table": {
+      "headers": [
+        "Distribución de puestos",
+        "Sin título univ.",
+        "Con título univ.",
+        "Brecha"
+      ],
+      "rows": [
+        [
+          "Observada",
+          "$976.680",
+          "$1.505.830",
+          "54,2 %"
+        ],
+        [
+          "Común",
+          "$979.540",
+          "$1.487.603",
+          "51,9 %"
+        ]
+      ],
+      "widths": [
+        430,
+        250,
+        250,
+        230
+      ]
+    },
+    "lead": "Mismas 1.447 personas; distribución común de los cinco puestos para ambos grupos.",
+    "takeaway": "La brecha baja 2,3 puntos porcentuales (2,31 sin redondear). Es descriptivo: no se contrastó la significancia de ese cambio.",
+    "note": "No ajusta horas, edad ni sexo. n=1.447; otra muestra y otro estimando que el principal log.",
+    "scripts": [
+      "03_estandarizacion.R"
+    ],
+    "files": [
+      "11_soporte_y_kish.csv",
+      "12_estandarizacion.csv"
+    ],
+    "number": 39,
+    "source": "Fuente: elaboración propia con EPH-INDEC, 1T 2026. PONDIIO salvo indicación.",
+    "notes": "Guion y detalle técnico: Mismas 1.447 personas; distribución común de los cinco puestos para ambos grupos.\nLa brecha baja 2,3 puntos porcentuales (2,31 sin redondear). Es descriptivo: no se contrastó la significancia de ese cambio.\nNo ajusta horas, edad ni sexo. n=1.447; otra muestra y otro estimando que el principal log.\nScripts: 03_estandarizacion.R\nResultados: 11_soporte_y_kish.csv, 12_estandarizacion.csv",
+    "original_number": 15,
+    "annex": true
+  }
+]

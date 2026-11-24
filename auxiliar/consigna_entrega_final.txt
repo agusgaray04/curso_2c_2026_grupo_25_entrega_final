@@ -1,0 +1,277 @@
+Trabajo Práctico de Ciencia de Datos
+Entrega final: trabajo integrador
+Fecha límite de entrega: martes 24/11 hasta las 23:59 hs. Presentaciones orales: del 24/11 al 01/12.
+
+Objetivo
+La entrega final integra todo el recorrido del cuatrimestre en un solo trabajo. No es una cuarta entrega independiente: es la versión terminada del trabajo que vienen construyendo desde la instancia 1, con las devoluciones incorporadas, los métodos completos y la presentación cuidada.
+
+Esta instancia busca que los grupos:
+
+presenten un trabajo con un hilo argumental único, ordenado desde la hipótesis hasta la conclusión;
+incorporen las devoluciones de las tres instancias intermedias;
+completen los métodos faltantes (en total, al menos tres además de las estadísticas descriptivas);
+muestren el tratamiento de faltantes y outliers con sus estadísticas descriptivas antes y después;
+entreguen un repositorio de GitHub reproducible, con la estructura de carpetas vista en el curso;
+defiendan oralmente las decisiones metodológicas y el código.
+La entrega consta de tres componentes obligatorios: la presentación, el repositorio y la presentación oral. Los tres se evalúan.
+
+Parte 1 — Presentación
+El formato es PDF o PPTX, de 15 a 20 diapositivas sin contar la carátula ni la diapositiva de cierre, más un anexo con todas las tablas y gráficos complementarios que consideren relevantes pero que no forman parte de la historia principal.
+
+Debe pensarse como una presentación laboral o académica: visual, sintética y bien estructurada. Eviten bloques extensos de texto. Las diapositivas acompañan un argumento, no lo reemplazan.
+
+El recorrido tiene que poder seguirse así:
+
+¿Qué nos preguntamos? → ¿Con qué datos? → ¿Cómo quedaron esos datos después de limpiarlos? → ¿Qué métodos aplicamos y por qué en ese orden? → ¿Qué encontramos? → ¿Qué podemos concluir?
+
+1. Hipótesis de trabajo
+Presentar con claridad la o las hipótesis que guían el análisis. Deben ser específicas y contrastables con los datos disponibles. Toda la estructura del trabajo —desde la elección de las variables hasta la de los métodos— debe estar orientada a evaluarlas.
+
+Si la hipótesis cambió respecto de la instancia 1, decirlo y explicar por qué. Es esperable y no se penaliza: lo que se penaliza es sostener una hipótesis que el trabajo ya no está evaluando.
+
+2. Descripción de la base de datos
+¿De qué trata la base? ¿Quién la produce y con qué periodicidad se publica?
+¿Cuál es la unidad de observación (personas, hogares, empresas, países, provincias, meses, flujos comerciales)?
+¿Cuántas filas y cuántas variables tiene la base con la que efectivamente trabajan?
+¿Qué período temporal cubre?
+¿Qué limitaciones conocidas tiene (cobertura, cambios metodológicos, subregistro, discontinuidades de la serie)?
+3. Descripción de las variables utilizadas
+No todas las variables de la base, sino las que efectivamente se usan. Para cada una:
+
+Variable	Descripción	Tipo	Valores faltantes
+nombre_en_la_base	¿Qué representa? ¿En qué unidad está medida?	Numérica / categórica / fecha	XX
+Cuando sea relevante, indicar también las categorías que toma la variable y, si construyeron variables nuevas (ratios, per cápita, tasas de crecimiento, índices), explicitar cómo las calcularon.
+
+4. Bases auxiliares y complementarias
+Si usaron bases adicionales:
+
+describir cada una, su fuente y sus variables relevantes;
+explicar cómo y para qué se usaron: un join, la construcción de un denominador o un índice, un deflactor, contextualización;
+aclarar si el cruce generó pérdida de observaciones y cuántas.
+Si no usaron bases auxiliares, decirlo explícitamente.
+
+5. Estadísticas descriptivas
+Presentar las estadísticas descriptivas de la tabla con la que van a hacer el análisis: medidas de tendencia central, de dispersión y, cuando corresponda, la distribución de las variables principales.
+
+Estas estadísticas tienen que permitirle al lector hacerse una idea de los datos antes de ver los resultados de los métodos. Usen tablas y gráficos, no párrafos con números sueltos.
+
+6. Datos faltantes y outliers
+Esta sección es la continuación directa del punto 2 de la instancia 2, con las correcciones de la devolución incorporadas.
+
+Mostrar cómo se detectaron: cuántos faltantes tiene cada variable, dónde se concentran, qué criterio usaron para los outliers (rango intercuartílico, z-score, percentiles extremos, inspección gráfica) y por qué ese criterio es adecuado para esa distribución.
+Decir qué hicieron y justificarlo: eliminación, imputación, interpolación, winsorización, transformación, restricción del período o de la muestra, o mantenerlos.
+Explicitar las consecuencias de la decisión sobre los resultados.
+Si no hay faltantes ni outliers, igualmente hay que mostrar cómo llegaron a esa conclusión. No alcanza con decir "no hay": hay que mostrar la evidencia.
+7. Estadísticas descriptivas post-limpieza
+Presentar las descriptivas después del tratamiento, de modo que se vea el efecto de las decisiones del punto 6.
+
+Si decidieron no hacer ninguna limpieza para no alterar las variables, tienen que mostrar que incluir o excluir esas observaciones no cambia de manera considerable las estadísticas descriptivas, o bien justificar por qué ese cambio, aun siendo relevante, no debe tenerse en cuenta.
+
+8. Metodología y resultados
+En total deben aplicar al menos tres métodos además de las estadísticas descriptivas, con esta composición mínima:
+
+al menos un método de inferencia estadística (unidad 2): test de diferencia de medias, Chi cuadrado de independencia, ANOVA o Kruskal-Wallis, regresión lineal;
+al menos un método de análisis cuantitativo (unidad 3): índices de concentración (HHI, CR4), ventajas comparativas reveladas, índices de desigualdad (Gini, Theil), indexaciones a un año base, índice compuesto, clustering, PCA/MCA, descomposición de la varianza;
+un tercer método de cualquiera de las dos unidades, que es el que se agrega en esta entrega.
+Quienes ya presentaron tres o más métodos en la instancia 2 deben profundizar o corregir los existentes en lugar de sumar uno nuevo sin función en el argumento. Un método que no aporta al hilo del trabajo resta, no suma.
+
+Orden de los métodos
+El orden importa: cada herramienta se apoya en la anterior y prepara la que sigue. Como orientación general:
+
+si el trabajo incluye series de tiempo, conviene que vaya primero;
+los tests de hipótesis van antes que un ANOVA o un Chi cuadrado;
+ANOVA / Chi cuadrado van antes que una regresión;
+índices (HHI, RCA, Gini, Theil, compuestos) se ubican según su rol: si construyen la variable que después analizan, van antes; si resumen un resultado, van después;
+clustering y PCA/MCA suelen ir antes de los métodos que usan los grupos o los componentes obtenidos.
+Para cada método
+Por qué se eligió y qué pregunta responde dentro del análisis.
+Decisiones metodológicas: variables incluidas, estandarización, ponderadores, año base, cantidad de clusters o de componentes y cómo se eligió, agrupamiento de categorías.
+Supuestos clave y evaluación de si se cumplen (normalidad, homocedasticidad, frecuencias esperadas mínimas, independencia, linealidad, según el caso). Si no se cumplen, explicar cómo se abordó el problema: errores robustos, transformación de la variable, test no paramétrico alternativo, agrupación de categorías. No todos los métodos tienen los mismos supuestos; lo que se pide es que identifiquen los relevantes para cada caso.
+Resultados con los valores que correspondan (estadístico, grados de libertad, p-valor, tamaño del efecto, post-hoc, coeficientes y su error estándar, varianza explicada).
+Interpretación en el contexto del trabajo. Un coeficiente, un p-valor o un estadístico no hablan solos: hay que decir qué implican para la hipótesis.
+Limitaciones del método aplicado.
+Recuerden que rechazar la hipótesis nula no implica causalidad y que una diferencia estadísticamente significativa no necesariamente es relevante en términos económicos.
+
+9. Conclusión
+¿Se comprueban las hipótesis planteadas? Responder con base en la evidencia presentada a lo largo del trabajo. La conclusión no introduce resultados nuevos: sintetiza lo ya mostrado y toma posición.
+
+Una conclusión que matiza o contradice la hipótesis inicial es un buen resultado si está bien fundada. Forzar los datos para que confirmen la hipótesis, no.
+
+10. Próximos pasos
+¿Qué haría falta para mejorar o profundizar el trabajo? Limitaciones de los datos, herramientas que no pudieron aplicar, variables que sería interesante incorporar, análisis complementarios que fortalecerían las conclusiones.
+
+Visualizaciones
+El trabajo debe incluir las dos visualizaciones de la instancia 3 —la exploratoria y la comunicativa—, con las correcciones de la devolución incorporadas y articuladas con el flujo del análisis. No pueden aparecer desconectadas del argumento: tiene que verse en qué momento del razonamiento entra cada una.
+
+Esas dos no alcanzan. El trabajo tiene que incluir gráficos adicionales, porque una presentación de 15 a 20 diapositivas no se sostiene con dos visualizaciones: las descriptivas, el diagnóstico de faltantes y outliers y los resultados de los métodos se muestran mejor con gráficos que con tablas. Como orientación, se espera que haya visualizaciones en al menos tres momentos del trabajo: la exploración descriptiva de las variables principales, el tratamiento de faltantes y outliers y los resultados de los métodos aplicados.
+
+Los gráficos adicionales no tienen que ser exploratorios ni comunicacionales. Pueden ser gráficos de tipo informe: una serie de tiempo, un gráfico de barras, un boxplot, un gráfico de los resultados de un método. No se les exige la complejidad técnica del exploratorio de la instancia 3 ni la editorialización del comunicativo. Un gráfico simple y bien hecho está perfecto si es el que corresponde a lo que quieren mostrar.
+
+Lo que sí se exige es que cumplan los criterios de buena visualización vistos en clase, cualquiera sea su tipo. Y vale el mismo criterio que en la instancia 3: un gráfico que no se usa para nada en el análisis no suma. Si no aporta al argumento, va al anexo o no va.
+
+Criterios que deben cumplir todos los gráficos
+El tipo de gráfico elegido es el adecuado para el tipo de variable y para lo que se quiere mostrar. Nada de gráficos de torta.
+Todos los elementos en castellano.
+Ejes y categorías con nombre descriptivo y con unidad de medida. Si la variable es el PIB per cápita en dólares, el gráfico tiene que decir "PIB per cápita (USD)", no gdp_per_cap ni ningún otro nombre de variable crudo.
+Números formateados: separador de miles, decimales razonables, porcentajes como porcentajes.
+Título que diga qué se está mirando y, cuando haga falta, bajada con el universo y el período.
+Fuente del dato siempre, al pie.
+Orden de las categorías con algún sentido (por magnitud, cronológico, por agrupamiento), no el alfabético por defecto.
+Paleta accesible y color usado con un criterio, no decorativo.
+Sin elementos que no aporten: grillas pesadas, bordes, leyendas redundantes, decimales de más, ejes duplicados.
+Escalas honestas: si cortan el eje o usan escala logarítmica, hay que decirlo.
+Legibles al tamaño en que quedan en la diapositiva. Abran la presentación y mírenla: si hay que hacer zoom para leer un eje, el tamaño de fuente está mal.
+Generados en R y exportados con ggsave(). No se aceptan salidas crudas, capturas de pantalla ni el botón "Export" de RStudio.
+Parte 2 — Repositorio de GitHub
+Se entrega el enlace a un repositorio de GitHub que contenga todo el material del trabajo: datos, códigos, outputs y README. Todo debe estar alojado en el repositorio, salvo excepciones habilitadas expresamente por el docente (por ejemplo, un archivo de datos demasiado pesado).
+
+Estructura de carpetas
+proyecto/
+├── raw/             # Datos crudos, tal como fueron descargados. No se modifican.
+├── auxiliar/        # Bases complementarias o archivos de apoyo
+├── input/           # Datos procesados y listos para el análisis
+├── output/
+│   ├── tablas/      # Tablas de resultados generadas por los scripts
+│   └── graficos/    # Visualizaciones generadas por los scripts
+├── script/          # Todos los códigos del trabajo
+├── utils/           # Funciones propias (un script por función)
+└── README.md        # Presentación y guía del repositorio
+Se deben usar todas las carpetas: tomar los datos de raw/ y auxiliar/, guardar los procesados en input/ y los resultados en output/.
+
+Compartimentación de los scripts
+Cada script debe ser una unidad autónoma: guarda sus resultados (en input/ o en output/, según corresponda) y el script siguiente lee esos archivos guardados, sin depender de que el anterior haya corrido en la misma sesión de R.
+
+Por ejemplo: si un script limpia la base y genera una tabla limpia, tiene que guardarla como archivo. El script de análisis posterior lee ese archivo, no asume que el objeto está en el entorno.
+
+Nomenclatura de los scripts
+Prefijo numérico que indique el orden de ejecución, seguido de una descripción breve de lo que hace el script: 01_limpieza.R, 02_descriptivas.R, 03_faltantes_outliers.R, 04_inferencia.R, 05_indices.R, 06_graficos.R.
+
+El nombre tiene que alcanzar para entender qué hace el script sin abrirlo.
+
+Funciones propias
+Si crearon funciones para automatizar tareas repetitivas, cada función va en su propio script dentro de utils/ y se llama desde los scripts con source(). Si una función se usa en más de un script, obligatoriamente tiene que estar en utils/.
+
+Reproducibilidad
+Este punto es fundamental y se evalúa con especial atención, por más que parezca de menor relevancia. El código tiene que poder ejecutarse sin intervención manual y sin errores en otra computadora. Esto implica:
+
+Rutas relativas, nunca absolutas. Ninguna ruta del tipo C:/Users/.../Escritorio/TP/datos.xlsx. Trabajar con el proyecto de RStudio (.Rproj) o con here().
+Todos los archivos de datos necesarios, en el repositorio.
+Librerías cargadas al inicio de cada script.
+Nombres claros de objetos y variables, en minúsculas y sin espacios ni tildes.
+Comentarios que expliquen las decisiones relevantes, no lo que ya dice el código.
+Estructura ordenada y legible, con secciones separadas.
+Ningún setwd(), rm(list = ls()) ni install.packages() en el medio de un script.
+La reproducibilidad es una competencia central de la materia y se evalúa con ese peso. Tienen todos los elementos para cumplirla: la estructura de carpetas, el armado del README y las buenas prácticas de código fueron temas del curso.
+
+Prueba antes de entregar
+Antes de entregar, clonen o descarguen su propio repositorio en otra carpeta (o pídanle a un compañero de otro grupo que lo haga) y corran los scripts en orden desde cero. Si se rompe algo, se rompe también cuando lo corra el docente.
+
+README
+En formato Markdown, en la raíz del repositorio. Como mínimo debe incluir:
+
+Título del proyecto.
+Integrantes del grupo.
+Objetivo e hipótesis de trabajo.
+Base de datos utilizada, con link a la fuente original, período y unidad de observación.
+Descripción del análisis realizado.
+Estructura del repositorio.
+Instrucciones de reproducción: paquetes necesarios, qué script correr y en qué orden, qué hace cada uno y qué archivos genera.
+Conclusiones principales.
+La guía completa, con la sintaxis de Markdown y un ejemplo armado, está en trabajo_practico/guia_readme.md.
+
+Parte 3 — Presentación oral
+Cada grupo expone la presentación en formato virtual y sincrónico, con una duración total de 20 minutos: 15 minutos de exposición y 5 minutos de preguntas del docente. Las fechas van del 24/11 al 01/12 y el cronograma se comparte una semana antes.
+
+Todos los integrantes deben participar, sin excepción.
+Los 15 minutos de exposición son el límite: si se pasan, se corta. Ensayen con reloj y recorten antes de llegar al día.
+Si alguien no puede ese día, se puede reprogramar para la clase siguiente avisando con anticipación.
+La exposición no consiste en leer las diapositivas: se espera que cuenten el trabajo.
+En los 5 minutos de preguntas se hará foco especial en las decisiones metodológicas y en el código. Tienen que poder explicar por qué eligieron cada método, qué hace cada script y qué significan los resultados que muestran. Las preguntas pueden dirigirse a cualquier integrante.
+Formato y envío
+Componente	Formato
+Presentación	PDF o PPTX, 15 a 20 diapositivas + anexo
+Repositorio	Enlace a GitHub (repositorio público o con acceso al docente)
+Presentación oral	Virtual y sincrónica, 20 minutos (15 de exposición + 5 de preguntas), entre el 24/11 y el 01/12
+Envío
+Enviar a: nsidicaro.fce@gmail.com
+Asunto: curso_2c_2026_grupo_XX_entrega_final (reemplazando XX por el número de grupo, por ejemplo curso_2c_2026_grupo_04_entrega_final)
+Cuerpo del mail: el link al repositorio de GitHub y los nombres de los integrantes.
+Archivo adjunto: la presentación.
+Fecha límite: martes 24/11, hasta las 23:59 hs.
+Un solo integrante del grupo realiza el envío, con el resto en copia.
+
+No se aceptan modificaciones del repositorio posteriores a la fecha límite. Se evalúa el estado del repositorio al momento del cierre: los commits posteriores no se consideran.
+
+Evaluación
+La entrega final representa el 60% de la nota final e incluye la presentación oral.
+
+La devolución se entrega en formato de grilla de evaluación, detallando cada punto y si se evidenció un proceso de mejora entre las instancias intermedias y el resultado final. Los puntos de la grilla se comparten en las últimas semanas para que puedan usarlos como checklist.
+
+Se tendrán en cuenta:
+
+Hipótesis: claridad, especificidad y coherencia con todo el trabajo.
+Incorporación de las devoluciones: si las correcciones de las tres instancias intermedias efectivamente se aplicaron.
+Datos: descripción de la base, de las variables y de las bases auxiliares.
+Descriptivas y limpieza: diagnóstico de faltantes y outliers, criterio de detección, decisión, justificación y comparación antes/después.
+Métodos: elección adecuada, orden jerárquico, decisiones metodológicas explicitadas, verificación de supuestos y tratamiento de los incumplimientos.
+Interpretación: todo resultado mostrado está interpretado en el contexto del problema.
+Visualizaciones: calidad de todos los gráficos (los dos de la instancia 3 y los adicionales), pertinencia del tipo de gráfico elegido, articulación con el argumento y cumplimiento de los criterios de buena visualización.
+Conclusión y próximos pasos: respuesta fundada a la hipótesis y lectura crítica de las limitaciones.
+Presentación: claridad, orden, legibilidad e hilo conductor.
+Repositorio: estructura de carpetas, compartimentación y nomenclatura de los scripts, funciones en utils/, buenas prácticas de código y README completo.
+Reproducibilidad: el código corre de principio a fin sin intervención manual y sin errores.
+Presentación oral: participación de todos los integrantes, manejo del tiempo, dominio del trabajo y capacidad para responder las preguntas sobre el código y las decisiones adoptadas.
+El trabajo no tiene carácter causal. Es una aproximación al fenómeno estudiado desde el análisis de datos: los pasos tienen que tener lógica y estar entrelazados para construir una historia, pero no se busca una explicación causal.
+
+Uso de herramientas de IA
+Está permitido, tanto para el armado de los scripts como para la interpretación de los resultados. Se recomienda limitar su uso en el armado de la presentación. El uso responsable implica que entiendan qué hace el código y por qué tomaron cada decisión: eso es lo que se evalúa en la presentación oral.
+
+Checklist antes de enviar
+Contenido
+
+ ¿La hipótesis está planteada de forma específica y contrastable?
+ ¿Está la descripción de la base, de las variables usadas y de las auxiliares?
+ ¿Hay descriptivas antes y después del tratamiento de faltantes y outliers?
+ ¿Mostramos cómo detectamos faltantes y outliers, aunque no hubiera?
+ ¿Aplicamos al menos tres métodos, con al menos uno de cada unidad?
+ ¿Cada método tiene justificación, supuestos, resultados e interpretación?
+ ¿Están las dos visualizaciones de la instancia 3, corregidas y articuladas con el argumento?
+ ¿Hay gráficos adicionales en las descriptivas, en el diagnóstico de faltantes y outliers y en los resultados de los métodos?
+ ¿Todos los gráficos cumplen los criterios de buena visualización, sean del tipo que sean?
+ ¿La conclusión responde a la hipótesis sin introducir resultados nuevos?
+ ¿Están los próximos pasos?
+ ¿La presentación tiene entre 15 y 20 diapositivas, sin contar carátula, cierre y anexo?
+Gráficos y tablas
+
+ ¿Todo está en castellano, sin nombres crudos de variables?
+ ¿Los ejes tienen nombre y unidad de medida?
+ ¿Está la fuente del dato en todos los gráficos y tablas?
+ ¿Se leen bien al tamaño en que quedaron en la diapositiva?
+Repositorio
+
+ ¿Están las carpetas raw/, auxiliar/, input/, output/tablas/, output/graficos/, script/ y utils/?
+ ¿Los scripts tienen prefijo numérico y nombre descriptivo?
+ ¿Cada script guarda sus resultados y el siguiente los lee desde el archivo?
+ ¿Las funciones usadas en más de un script están en utils/ y se llaman con source()?
+ ¿Todas las rutas son relativas?
+ ¿Las librerías están cargadas al inicio de cada script?
+ ¿El README dice qué correr, en qué orden y qué genera cada script?
+ ¿Clonamos el repositorio en otra carpeta y corrimos todo de cero sin errores?
+Material de apoyo
+Recurso	Dónde está
+Consignas de las instancias 1, 2 y 3	trabajo_practico/consignas_instancia_1.md, _2.md, _3.md
+Guía para escribir el README	trabajo_practico/guia_readme.md
+Organización de proyectos y rutas relativas	clases/clase17/
+Ponderación, agregación y distribuciones	clases/clase05/
+Inferencia y remuestreo	clases/clase07/
+Análisis exploratorio de datos	clases/clase08/
+ANOVA y Chi cuadrado	clases/clase09/
+Índices económicos	clases/clase11/, clases/clase12/
+Faltantes, outliers y transformaciones	clases/clase13/
+Índice compuesto	clases/clase14/
+Clustering, PCA y MCA	clases/clase15/, clases/clase16/
+Regresión y descomposiciones	clases/clase18/
+Series de tiempo	clases/clase19/
+Funciones y loops	clases/clase20/
+Visualización	clases/clase21/, clases/clase22/, clases/clase24/
+Our World in Data — Data Insights	https://ourworldindata.org/data-insights
