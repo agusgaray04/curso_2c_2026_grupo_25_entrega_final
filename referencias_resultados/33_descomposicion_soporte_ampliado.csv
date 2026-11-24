@@ -1,7 +1,0 @@
-"componente","varianza_millones2","porcentaje_varianza","theil","porcentaje_theil","n","puestos","universo"
-"Entre puestos",0.20721729598199,37.1714315363874,0.104501407045456,42.3072310441941,7823,170,"Descriptivo sin filtro de horas: al menos 10 casos totales por puesto"
-"Entre titulo dentro del puesto",0.0372090279101682,6.67469781875042,0.0126861353731453,5.13596204552657,7823,170,"Descriptivo sin filtro de horas: al menos 10 casos totales por puesto"
-"Dentro de puesto y titulo",0.31303753320773,56.1538706448621,0.129818476330992,52.5568069102793,7823,170,"Descriptivo sin filtro de horas: al menos 10 casos totales por puesto"
-"Entre puestos",0.209722406558525,39.9759876633737,0.110451799398286,44.6062707402869,6858,157,"Muestra amplia: puestos con al menos 10 casos totales"
-"Entre titulo dentro del puesto",0.0311962810489504,5.94644209372052,0.0109900475907478,4.43836171933966,6858,157,"Muestra amplia: puestos con al menos 10 casos totales"
-"Dentro de puesto y titulo",0.283702263160613,54.0775702429058,0.12617311289267,50.9553675403734,6858,157,"Muestra amplia: puestos con al menos 10 casos totales"
