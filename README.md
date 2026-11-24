@@ -8,7 +8,7 @@ Entrega final de Ciencia de Datos para Economía y Negocios, FCE-UBA. Grupo 25.
 - Ramiro Leverone, registro 909328.
 
 ## Objetivo e hipótesis
-¿La brecha de ingresos entre trabajadores con y sin título universitario persiste dentro de ocupación y rama? Esperamos una asociación positiva, con heterogeneidad. No identificamos un efecto causal.
+¿La brecha de ingresos entre trabajadores con y sin título universitario persiste dentro de ocupación y rama? Esperamos una asociación positiva, con heterogeneidad. 
 
 Instancia 1 comparó niveles educativos amplios, inserción, registro e ingresos. Después distinguimos universitario de terciario y profundizamos ocupación × rama. Por devolución docente, el modelo amplio en log es principal; los cinco puestos de Instancias 2–3 se conservan como detalle. AUH y monotributo se retiraron por falta de conexión con el análisis.
 
